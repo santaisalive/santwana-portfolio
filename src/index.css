@@ -32,17 +32,6 @@ body {
   border-radius: 50%;
 }
 
-.star.twinkle {
-  animation: twinkle-once ease-in-out 1;
-  animation-fill-mode: both;
-}
-
-@keyframes twinkle-once {
-  0% { opacity: var(--base-opacity, 0.3); }
-  50% { opacity: 1; }
-  100% { opacity: var(--base-opacity, 0.3); }
-}
-
 /* NAV */
 nav {
   position: fixed;

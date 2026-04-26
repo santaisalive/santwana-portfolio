@@ -51,9 +51,9 @@ nav {
 .hero {
   min-height: 100vh;
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 1fr 420px;
   align-items: center;
-  padding: 100px 48px 60px 80px;
+  padding: 100px 0 60px 80px;
   overflow: hidden;
   gap: 0;
 }
@@ -67,13 +67,14 @@ nav {
 .hero-right {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  margin-right: -120px;
+  justify-content: flex-start;
+  overflow: hidden;
+  height: 100%;
 }
 
 .hero-title {
   font-family: 'Special Elite', cursive;
-  font-size: clamp(52px, 7vw, 90px);
+  font-size: clamp(38px, 5vw, 64px);
   font-weight: 400;
   line-height: 1.05;
   color: #2C1810;
@@ -146,13 +147,15 @@ nav {
 
 /* SHIP WHEEL */
 .wheel-container {
-  width: 520px;
-  height: 520px;
+  width: 600px;
+  height: 600px;
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0.35;
+  opacity: 0.3;
   user-select: none;
+  margin-left: -120px;
+  flex-shrink: 0;
 }
 
 .ship-wheel {
@@ -178,9 +181,9 @@ nav {
 
 .cards-scroll {
   display: flex;
-  gap: 20px;
+  gap: 36px;
   overflow-x: auto;
-  padding-bottom: 16px;
+  padding: 20px 4px 24px;
   scrollbar-width: none;
   user-select: none;
 }
@@ -188,13 +191,31 @@ nav {
 .cards-scroll::-webkit-scrollbar { display: none; }
 
 .swipe-card {
-  min-width: 300px;
-  max-width: 300px;
+  min-width: 260px;
+  max-width: 260px;
   background: #6B2020;
-  border-radius: 6px;
-  padding: 28px;
+  border-radius: 4px;
+  padding: 24px;
   flex-shrink: 0;
   transition: transform 0.2s;
+  position: relative;
+  border: 8px solid #EDE0CC;
+  outline: 2px dashed #C4A882;
+  box-shadow: 
+    0 0 0 10px #EDE0CC,
+    2px 2px 12px rgba(44, 24, 16, 0.15);
+}
+
+.swipe-card::before {
+  content: '';
+  position: absolute;
+  top: -14px;
+  left: -14px;
+  right: -14px;
+  bottom: -14px;
+  border: 2px dashed #C4A882;
+  border-radius: 6px;
+  pointer-events: none;
 }
 
 .swipe-card:hover { transform: translateY(-4px); }

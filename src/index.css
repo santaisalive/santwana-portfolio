@@ -465,7 +465,8 @@ footer span {
 /* COSMOS TAG */
 .cosmos-tag {
   text-align: center;
-  margin-top: -40px;
+  margin-top: -30px;
+  width: 420px;
 }
 
 .cosmos-name {

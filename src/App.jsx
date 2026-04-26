@@ -122,7 +122,6 @@ function App() {
       {/* HERO */}
       <section className="hero">
         <div className="hero-content">
-          <div className="hero-label">Founder's Office · GTM · AI · Bengaluru</div>
           <h1 className="hero-title">
             Will Build<br />
             <TypeWriter />

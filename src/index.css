@@ -424,7 +424,7 @@ footer span {
 /* SPEECH BUBBLE */
 .speech-bubble {
   position: absolute;
-  top: 20px;
+  top: -10px;
   left: 50%;
   transform: translateX(-50%);
   background: #ffffff;

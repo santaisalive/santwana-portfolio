@@ -29,11 +29,11 @@ const INITIAL_CARDS = {
 const COLUMNS = ['Early Story', 'Career Snapshot', 'Key Initiatives', 'Testimonials']
 
 const FUN_FACTS = [
-  "People call him Santa, hehe I find it silly 😄",
-  "Santwana means to console, well I am working for a guy named consolation, lol 😂",
-  "This guy cycled 18 kms a day for 2 years for maths tuition. Crazier than I thought 🚲",
-  "He loves climbing mountains. He should have asked me, I would have flown him to the top 🚀",
-  "Hey You! He doesn't pay me. Isn't unpaid internship illegal on your earth? 👀",
+  "People call him Santa… bro hasn’t delivered a single gift to me yet"
+  "Santwana = console. I am working for a man whose name is consolation😂"
+  "Cycled 18 km daily for maths tuition… still not smarter than me in maths 🚲"
+  "He climbs mountains… could’ve just taken the elevator with me 🚀"
+  "He doesn’t pay me… Isn't that illegal? 👀"
 ]
 
 function Stars() {

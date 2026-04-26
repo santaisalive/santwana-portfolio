@@ -1,17 +1,46 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 import './App.css'
 
 const TYPEWRITER_TEXT = 'Almost Anything!'
+const SUBTITLE_TEXT = 'GTM. AI. Ops. Growth. Yes, all of it.'
+
+const INITIAL_CARDS = {
+  'Early Story': [
+    { id: 'e1', meta: 'Bihar · 2009', title: 'Apollo Hospital', desc: 'Closed my first enterprise account at 15. Door to door. No pedigree. Just persistence.', status: 'CLOSED ✓', statusType: 'closed' },
+    { id: 'e2', meta: 'Chhattisgarh · 2013', title: 'BITS Pilani Pilot', desc: 'Built an edtech startup in college. Got a pilot with BITS Pilani. Cofounder left. Shut it down.', status: 'CHURNED', statusType: 'churned' },
+    { id: 'e3', meta: 'Chhattisgarh · 2015', title: 'The College Builder', desc: 'Built clubs, earned pocket money from first year. The instinct to build was always there.', status: 'FOUNDATION', statusType: 'learning' },
+  ],
+  'Career Snapshot': [
+    { id: 'c1', meta: 'Outsized · 2021', title: 'MENA & APAC Market', desc: 'Built the entire MENA and APAC B2B business from zero. 2.5 years. First market, first enterprise deals.', status: 'CLOSED ✓', statusType: 'closed' },
+    { id: 'c2', meta: 'Greylabs · 2023', title: 'AI Distribution', desc: 'Went specifically to learn how AI is sold and distributed. Learned the motion. Made a clean exit.', status: 'COMPLETE', statusType: 'learning' },
+    { id: 'c3', meta: 'ZenStatement · 2024', title: 'Founder\'s Office', desc: 'Investor relations, events, marketing, community, content, legal. Operated as a full generalist.', status: 'IN PROGRESS', statusType: 'inprogress' },
+  ],
+  'Key Initiatives': [
+    { id: 'k1', meta: 'AI · GTM Engineering', title: 'Lead Gen Engine', desc: 'Built a signal-based lead generation engine independently. Python, Apollo, GitHub Actions, Airtable. P0/P1/P2 scoring.', status: 'LIVE', statusType: 'closed' },
+    { id: 'k2', meta: 'HomeFlavour · 2024', title: 'B2B GTM — HomeFlavour', desc: 'Co-building B2B go-to-market for a premium Indian sweets brand run from a village in Maharashtra.', status: 'IN PROGRESS', statusType: 'inprogress' },
+    { id: 'k3', meta: 'Investor Relations', title: 'MIS & Investor GTM', desc: 'Monthly MIS for investor reviews. Worked with 3one4, Boldcap, Atrium Angels. Ran investor-led GTM.', status: 'COMPLETE', statusType: 'learning' },
+  ],
+  'Testimonials': [
+    { id: 't1', meta: 'Placeholder · Role', title: 'Testimonial One', desc: 'Placeholder testimonial. Replace with a real one from someone who has worked with you.', status: 'VERIFIED', statusType: 'closed' },
+    { id: 't2', meta: 'Placeholder · Role', title: 'Testimonial Two', desc: 'Placeholder testimonial. Replace with a real one from someone who has worked with you.', status: 'VERIFIED', statusType: 'closed' },
+  ],
+}
+
+const COLUMNS = ['Early Story', 'Career Snapshot', 'Key Initiatives', 'Testimonials']
 
 function Stars() {
-  const stars = Array.from({ length: 90 }, (_, i) => ({
-    id: i,
-    x: Math.random() * 100,
-    y: Math.random() * 100,
-    size: Math.random() * 2 + 0.5,
-    opacity: Math.random() * 0.6 + 0.2,
-    twinkle: Math.random() > 0.8
-  }))
+  const [stars] = useState(() =>
+    Array.from({ length: 90 }, (_, i) => ({
+      id: i,
+      x: Math.random() * 100,
+      y: Math.random() * 100,
+      size: Math.random() * 2 + 0.5,
+      opacity: Math.random() * 0.5 + 0.2,
+      twinkle: Math.random() > 0.75,
+      delay: Math.random() * 8,
+      duration: Math.random() * 4 + 3,
+    }))
+  )
 
   return (
     <div className="stars-container">
@@ -25,6 +54,8 @@ function Stars() {
             width: `${star.size}px`,
             height: `${star.size}px`,
             opacity: star.opacity,
+            animationDelay: `${star.delay}s`,
+            animationDuration: `${star.duration}s`,
           }}
         />
       ))}
@@ -32,7 +63,7 @@ function Stars() {
   )
 }
 
-function TypeWriter() {
+function TypeWriter({ onDone }) {
   const [displayed, setDisplayed] = useState('')
   const [index, setIndex] = useState(0)
   const [done, setDone] = useState(false)
@@ -45,16 +76,15 @@ function TypeWriter() {
         setIndex(prev => prev + 1)
       }, 100)
       return () => clearTimeout(timeout)
-    } else if (index === TYPEWRITER_TEXT.length && !done) {
+    } else if (!done) {
       setDone(true)
+      onDone()
     }
-  }, [index, done])
+  }, [index, done, onDone])
 
   useEffect(() => {
-    const cursorInterval = setInterval(() => {
-      setShowCursor(prev => !prev)
-    }, 500)
-    return () => clearInterval(cursorInterval)
+    const interval = setInterval(() => setShowCursor(p => !p), 500)
+    return () => clearInterval(interval)
   }, [])
 
   return (
@@ -70,8 +100,90 @@ function TypeWriter() {
   )
 }
 
+function KanbanBoard() {
+  const [cards, setCards] = useState(INITIAL_CARDS)
+  const [dragging, setDragging] = useState(null)
+  const [dragOver, setDragOver] = useState(null)
+
+  const handleDragStart = (e, cardId, fromCol) => {
+    setDragging({ cardId, fromCol })
+    e.dataTransfer.effectAllowed = 'move'
+  }
+
+  const handleDragOver = (e, col) => {
+    e.preventDefault()
+    e.dataTransfer.dropEffect = 'move'
+    setDragOver(col)
+  }
+
+  const handleDrop = (e, toCol) => {
+    e.preventDefault()
+    if (!dragging) return
+
+    const { cardId, fromCol } = dragging
+
+    if (fromCol === toCol) {
+      setDragging(null)
+      setDragOver(null)
+      return
+    }
+
+    // Card snaps back to original column
+    setTimeout(() => {
+      setCards(prev => ({ ...prev }))
+    }, 600)
+
+    setDragging(null)
+    setDragOver(null)
+  }
+
+  const handleDragEnd = () => {
+    setDragging(null)
+    setDragOver(null)
+  }
+
+  return (
+    <div className="pipeline-board">
+      {COLUMNS.map(col => (
+        <div
+          key={col}
+          className={`pipeline-col ${dragOver === col ? 'drag-over' : ''}`}
+          onDragOver={e => handleDragOver(e, col)}
+          onDrop={e => handleDrop(e, col)}
+          onDragLeave={() => setDragOver(null)}
+        >
+          <div className="col-header">
+            <span className={`col-dot ${col.toLowerCase().replace(' ', '-')}`}></span>
+            {col}
+            <span className="col-count">{cards[col].length}</span>
+          </div>
+          {cards[col].map(card => (
+            <div
+              key={card.id}
+              className={`pipeline-card ${dragging?.cardId === card.id ? 'dragging' : ''} ${col === 'Key Initiatives' ? 'active' : ''}`}
+              draggable
+              onDragStart={e => handleDragStart(e, card.id, col)}
+              onDragEnd={handleDragEnd}
+            >
+              <div className="card-meta">{card.meta}</div>
+              <div className="card-title">{card.title}</div>
+              <div className="card-desc">{card.desc}</div>
+              <div className={`card-status ${card.statusType}`}>{card.status}</div>
+            </div>
+          ))}
+        </div>
+      ))}
+    </div>
+  )
+}
+
 function App() {
   const pipelineRef = useRef(null)
+  const [subtitleDone, setSubtitleDone] = useState(false)
+
+  const handleTypewriterDone = useCallback(() => {
+    setTimeout(() => setSubtitleDone(true), 300)
+  }, [])
 
   const scrollToPipeline = () => {
     pipelineRef.current?.scrollIntoView({ behavior: 'smooth' })
@@ -81,7 +193,6 @@ function App() {
     <div className="site">
       <Stars />
 
-      {/* NAV */}
       <nav>
         <div className="nav-pill">
           <a href="#journey">My Journey</a>
@@ -91,7 +202,6 @@ function App() {
         </div>
       </nav>
 
-      {/* HERO */}
       <section className="hero">
         <div className="hero-left">
           <div className="hero-status">
@@ -100,10 +210,13 @@ function App() {
           </div>
           <h1 className="hero-title">
             Will Build<br />
-            <TypeWriter />
+            <TypeWriter onDone={handleTypewriterDone} />
           </h1>
-          <p className="hero-subtitle">
-            GTM. AI. Ops. Growth. Yes, all of it.
+          <p className={`hero-subtitle ${subtitleDone ? 'subtitle-pulse' : ''}`}>
+            GTM. AI. Ops. Growth.{' '}
+            <span className={`subtitle-highlight ${subtitleDone ? 'underline-in' : ''}`}>
+              Yes, all of it.
+            </span>
           </p>
           <div className="hero-buttons">
             <button onClick={scrollToPipeline} className="btn-primary">
@@ -116,72 +229,11 @@ function App() {
         </div>
       </section>
 
-      {/* PIPELINE */}
       <section className="pipeline-section" ref={pipelineRef} id="journey">
-        <div className="pipeline-label">CAREER PIPELINE</div>
-        <div className="pipeline-board">
-
-          <div className="pipeline-col">
-            <div className="col-header">
-              <span className="col-dot origin"></span>
-              Origin
-            </div>
-            <div className="pipeline-card">
-              <div className="card-meta">Bihar · 2009</div>
-              <div className="card-title">Apollo Hospital</div>
-              <div className="card-desc">Closed my first enterprise account at 15. Door to door. No pedigree. Just persistence.</div>
-              <div className="card-status closed">CLOSED ✓</div>
-            </div>
-            <div className="pipeline-card">
-              <div className="card-meta">Chhattisgarh · 2013</div>
-              <div className="card-title">BITS Pilani Pilot</div>
-              <div className="card-desc">Built an edtech startup in college. Got a pilot with BITS Pilani. Cofounder left. Shut it down.</div>
-              <div className="card-status churned">CHURNED</div>
-            </div>
-          </div>
-
-          <div className="pipeline-col">
-            <div className="col-header">
-              <span className="col-dot building"></span>
-              Building
-            </div>
-            <div className="pipeline-card">
-              <div className="card-meta">Outsized · 2021</div>
-              <div className="card-title">MENA & APAC Market</div>
-              <div className="card-desc">Built the entire MENA and APAC B2B business from zero. 2.5 years. First market, first enterprise deals.</div>
-              <div className="card-status closed">CLOSED ✓</div>
-            </div>
-            <div className="pipeline-card">
-              <div className="card-meta">Greylabs · 2023</div>
-              <div className="card-title">AI Distribution</div>
-              <div className="card-desc">Went specifically to learn how AI is sold and distributed. Learned the motion. Made a clean exit.</div>
-              <div className="card-status learning">LEARNING</div>
-            </div>
-          </div>
-
-          <div className="pipeline-col">
-            <div className="col-header">
-              <span className="col-dot now"></span>
-              Now
-            </div>
-            <div className="pipeline-card active">
-              <div className="card-meta">ZenStatement · 2024</div>
-              <div className="card-title">Lead Gen Engine</div>
-              <div className="card-desc">Built a signal-based lead generation engine independently. Python, Apollo, GitHub Actions, Airtable.</div>
-              <div className="card-status inprogress">IN PROGRESS</div>
-            </div>
-            <div className="pipeline-card active">
-              <div className="card-meta">HomeFlavour · 2024</div>
-              <div className="card-title">B2B GTM</div>
-              <div className="card-desc">Co-building B2B go-to-market for a premium Indian sweets brand run from a village in Maharashtra.</div>
-              <div className="card-status inprogress">IN PROGRESS</div>
-            </div>
-          </div>
-
-        </div>
+        <div className="pipeline-label">CAREER PIPELINE · DRAG TO EXPLORE</div>
+        <KanbanBoard />
       </section>
 
-      {/* FOOTER */}
       <footer>
         <span>Santwana · Bengaluru</span>
         <div className="footer-links">

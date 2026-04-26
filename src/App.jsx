@@ -35,27 +35,52 @@ function Stars() {
       x: Math.random() * 100,
       y: Math.random() * 100,
       size: Math.random() * 2 + 0.5,
-      opacity: Math.random() * 0.5 + 0.2,
+      baseOpacity: Math.random() * 0.5 + 0.2,
       twinkle: Math.random() > 0.75,
-      delay: Math.random() * 8,
-      duration: Math.random() * 4 + 3,
+      delay: Math.random() * 8000,
+      duration: Math.random() * 4000 + 3000,
     }))
   )
+
+  const [opacities, setOpacities] = useState(() =>
+    stars.reduce((acc, star) => {
+      acc[star.id] = star.baseOpacity
+      return acc
+    }, {})
+  )
+
+  useEffect(() => {
+    const intervals = stars
+      .filter(star => star.twinkle)
+      .map(star => {
+        const timeout = setTimeout(() => {
+          const interval = setInterval(() => {
+            setOpacities(prev => ({
+              ...prev,
+              [star.id]: prev[star.id] === star.baseOpacity ? 1 : star.baseOpacity
+            }))
+          }, star.duration)
+          return interval
+        }, star.delay)
+        return timeout
+      })
+
+    return () => intervals.forEach(clearTimeout)
+  }, [stars])
 
   return (
     <div className="stars-container">
       {stars.map(star => (
         <div
           key={star.id}
-          className={`star ${star.twinkle ? 'twinkle' : ''}`}
+          className="star"
           style={{
             left: `${star.x}%`,
             top: `${star.y}%`,
             width: `${star.size}px`,
             height: `${star.size}px`,
-            opacity: star.opacity,
-            animationDelay: `${star.delay}s`,
-            animationDuration: `${star.duration}s`,
+            opacity: opacities[star.id],
+            transition: `opacity ${star.duration / 2}ms ease-in-out`,
           }}
         />
       ))}

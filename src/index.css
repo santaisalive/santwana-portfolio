@@ -453,3 +453,11 @@ footer span {
   border-right: 10px solid transparent;
   border-top: 12px solid #ffffff;
 }
+
+.hero-greeting {
+  font-family: 'Special Elite', cursive;
+  font-size: clamp(28px, 3.5vw, 44px);
+  color: #ffffff;
+  line-height: 1.2;
+  margin-bottom: 4px;
+}

@@ -241,9 +241,6 @@ function App() {
             <button onClick={scrollToPipeline} className="btn-primary">
               Check Pipeline →
             </button>
-            <a href="#santa" className="btn-secondary">
-              <span className="santa-wave">🎅</span> Ask Santa
-            </a>
           </div>
         </div>
         <div className="hero-right">

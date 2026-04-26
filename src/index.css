@@ -369,20 +369,33 @@ footer span {
 .footer-links a:hover { color: #2C1810; }
 
 /* TYPEWRITER ANIMATION */
+/* TYPEWRITER ANIMATION */
 .typewriter {
-  display: inline-block;
+  display: inline;
   overflow: hidden;
   white-space: nowrap;
   border-right: 3px solid #8B4513;
-  width: 0;
   animation: 
     typing 2.5s steps(16, end) 0.5s forwards,
     blink 0.75s step-end infinite;
+  width: 0;
+  vertical-align: bottom;
 }
 
 @keyframes typing {
-  from { width: 0; }
-  to { width: 100%; }
+  from { 
+    width: 0;
+    opacity: 1;
+  }
+  to { 
+    width: 15ch;
+    opacity: 1;
+  }
+}
+
+@keyframes blink {
+  0%, 100% { border-color: #8B4513; }
+  50% { border-color: transparent; }
 }
 
 @keyframes blink {

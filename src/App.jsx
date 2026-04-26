@@ -195,6 +195,36 @@ function KanbanBoard() {
     </div>
   )
 }
+const FUN_FACTS = [
+  "People call him Santa, hehe I find it silly 😄",
+  "Santwana means to console, well I am working for a guy named consolation, lol 😂",
+  "This guy cycled 18 kms a day for 2 years for maths tuition. Crazier than I thought 🚲",
+  "He loves climbing mountains. He should have asked me, I would have flown him to the top 🚀",
+  "Hey You! He doesn't pay me. Isn't unpaid internship illegal on your earth? 👀",
+]
+
+function SpeechBubble() {
+  const [current, setCurrent] = useState(0)
+  const [visible, setVisible] = useState(true)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setVisible(false)
+      setTimeout(() => {
+        setCurrent(prev => (prev + 1) % FUN_FACTS.length)
+        setVisible(true)
+      }, 500)
+    }, 10000)
+    return () => clearInterval(interval)
+  }, [])
+
+  return (
+    <div className={`speech-bubble ${visible ? 'visible' : 'hidden'}`}>
+      {FUN_FACTS[current]}
+      <div className="speech-bubble-tail"></div>
+    </div>
+  )
+}
 
 function App() {
   const pipelineRef = useRef(null)

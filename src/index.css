@@ -320,3 +320,34 @@ footer span {
 }
 
 .footer-links a:hover { color: #2C1810; }
+/* HERO DRAG HINT */
+.hero-drag-hint {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.drag-arrow {
+  font-size: 16px;
+  color: #9B7B5B;
+  animation: bounce 1.5s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(4px); }
+}
+
+.drag-text {
+  font-family: 'Lora', serif;
+  font-size: 12px;
+  color: #9B7B5B;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-style: italic;
+}
+
+.hero-cards {
+  width: 100%;
+}

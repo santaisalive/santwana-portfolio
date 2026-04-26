@@ -238,22 +238,17 @@ function App() {
             <TypeWriter />
           </h1>
           <p className="hero-subtitle">GTM. AI. Ops. Growth. Yes, all of it.</p>
-          <div className="hero-buttons">
-            <a href="/santa" className="btn-primary">
-              <span className="santa-wave">🎅</span> Ask Santa
-            </a>
-            <a href="#journey" className="btn-secondary">Know My Story →</a>
+          <div className="hero-drag-hint">
+            <span className="drag-arrow">↓</span>
+            <span className="drag-text">Drag to explore my work & journey</span>
+          </div>
+          <div className="hero-cards">
+            <SwipeCards />
           </div>
         </div>
         <div className="hero-right">
           <ShipWheel />
         </div>
-      </section>
-
-      {/* SWIPE CARDS */}
-      <section className="cards-section">
-        <div className="cards-label">DRAG TO EXPLORE</div>
-        <SwipeCards />
       </section>
 
       {/* SKILLS */}

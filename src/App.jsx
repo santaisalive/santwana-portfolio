@@ -121,6 +121,38 @@ function App() {
 
       {/* HERO */}
       <section className="hero">
+        {/* SHIP WHEEL */}
+<div className="wheel-container">
+  <svg className="ship-wheel" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    {/* Outer ring */}
+    <circle cx="100" cy="100" r="90" fill="none" stroke="#8B4513" strokeWidth="8"/>
+    <circle cx="100" cy="100" r="80" fill="none" stroke="#8B4513" strokeWidth="2"/>
+    
+    {/* Center hub */}
+    <circle cx="100" cy="100" r="18" fill="#EDE0CC" stroke="#8B4513" strokeWidth="5"/>
+    <circle cx="100" cy="100" r="8" fill="#8B4513"/>
+
+    {/* Spokes — 8 total */}
+    <line x1="100" y1="18" x2="100" y2="82" stroke="#8B4513" strokeWidth="6" strokeLinecap="round"/>
+    <line x1="100" y1="118" x2="100" y2="182" stroke="#8B4513" strokeWidth="6" strokeLinecap="round"/>
+    <line x1="18" y1="100" x2="82" y2="100" stroke="#8B4513" strokeWidth="6" strokeLinecap="round"/>
+    <line x1="118" y1="100" x2="182" y2="100" stroke="#8B4513" strokeWidth="6" strokeLinecap="round"/>
+    <line x1="36" y1="36" x2="82" y2="82" stroke="#8B4513" strokeWidth="6" strokeLinecap="round"/>
+    <line x1="118" y1="118" x2="164" y2="164" stroke="#8B4513" strokeWidth="6" strokeLinecap="round"/>
+    <line x1="164" y1="36" x2="118" y2="82" stroke="#8B4513" strokeWidth="6" strokeLinecap="round"/>
+    <line x1="36" y1="164" x2="82" y2="118" stroke="#8B4513" strokeWidth="6" strokeLinecap="round"/>
+
+    {/* Spoke handles */}
+    <circle cx="100" cy="12" r="7" fill="#8B4513"/>
+    <circle cx="100" cy="188" r="7" fill="#8B4513"/>
+    <circle cx="12" cy="100" r="7" fill="#8B4513"/>
+    <circle cx="188" cy="100" r="7" fill="#8B4513"/>
+    <circle cx="29" cy="29" r="7" fill="#8B4513"/>
+    <circle cx="171" cy="171" r="7" fill="#8B4513"/>
+    <circle cx="171" cy="29" r="7" fill="#8B4513"/>
+    <circle cx="29" cy="171" r="7" fill="#8B4513"/>
+  </svg>
+</div>
         <div className="hero-content">
           <h1 className="hero-title">
             Will Build<br />

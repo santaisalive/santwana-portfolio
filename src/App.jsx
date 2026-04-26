@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback } = from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 import { Player } from '@lottiefiles/react-lottie-player'
 import './App.css'
 

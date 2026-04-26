@@ -461,3 +461,24 @@ footer span {
   line-height: 1.3;
   margin-bottom: 2px;
 }
+
+/* COSMOS TAG */
+.cosmos-tag {
+  text-align: center;
+  margin-top: -40px;
+}
+
+.cosmos-name {
+  font-family: 'Special Elite', cursive;
+  font-size: 18px;
+  color: #ffffff;
+  letter-spacing: 1px;
+}
+
+.cosmos-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: rgba(255,255,255,0.35);
+  letter-spacing: 1px;
+  margin-top: 4px;
+}

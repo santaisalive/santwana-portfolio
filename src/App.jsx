@@ -19,7 +19,7 @@ function App() {
           <div className="hero-label">Founder's Office · GTM · AI · Bengaluru</div>
           <h1 className="hero-title">
             Will Build<br />
-            <span className="hero-title-accent">Almost Anything.</span>
+            <span className="hero-title-accent typewriter">Almost Anything.</span>
           </h1>
           <p className="hero-subtitle">
             GTM. AI. Ops. Growth. Yes, all of it.

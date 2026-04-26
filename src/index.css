@@ -72,7 +72,7 @@ nav {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  padding: 120px 80px 80px;
+  padding: 80px 80px 60px 80px;
   gap: 48px;
 }
 
@@ -134,8 +134,8 @@ nav {
 /* SUBTITLE */
 .hero-subtitle {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 16px;
-  color: rgba(255,255,255,0.35);
+  font-size: 18px;
+  color: rgba(255,255,255,0.6);
   margin-bottom: 48px;
   letter-spacing: 0.5px;
   line-height: 1.6;
@@ -143,12 +143,10 @@ nav {
   transition: opacity 0.5s ease;
 }
 
-.hero-subtitle.subtitle-pulse {
-  opacity: 1;
-}
+.hero-subtitle.subtitle-pulse { opacity: 1; }
 
 .subtitle-highlight {
-  color: rgba(255,255,255,0.55);
+  color: rgba(255,255,255,0.85);
   position: relative;
   display: inline-block;
 }
@@ -164,9 +162,7 @@ nav {
   transition: width 0.6s ease 0.3s;
 }
 
-.subtitle-highlight.underline-in::after {
-  width: 100%;
-}
+.subtitle-highlight.underline-in::after { width: 100%; }
 
 /* BUTTONS */
 .hero-buttons {
@@ -176,7 +172,7 @@ nav {
 }
 
 .btn-primary {
-  background: #ffffff;
+  background: #4ade80;
   color: #080810;
   border: none;
   font-family: 'JetBrains Mono', monospace;
@@ -190,7 +186,7 @@ nav {
 }
 
 .btn-primary:hover {
-  background: #4ade80;
+  background: #22c55e;
   color: #080810;
 }
 
@@ -364,6 +360,27 @@ nav {
 .card-status.learning { background: rgba(234,179,8,0.1); color: #eab308; }
 .card-status.inprogress { background: rgba(167,139,250,0.1); color: #a78bfa; }
 
+/* SHOOTING STAR */
+.shooting-star {
+  position: absolute;
+  top: 12%;
+  left: -10%;
+  width: 200px;
+  height: 1.5px;
+  background: linear-gradient(90deg, transparent 0%, transparent 30%, rgba(255,255,255,0.8) 70%, #ffffff 100%);
+  border-radius: 2px;
+  animation: shoot 3.5s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+  transform: rotate(20deg);
+  transform-origin: right center;
+}
+
+@keyframes shoot {
+  0% { left: -15%; top: 10%; opacity: 0; width: 80px; }
+  10% { opacity: 1; }
+  70% { opacity: 0.8; width: 200px; }
+  100% { left: 115%; top: 60%; opacity: 0; width: 120px; }
+}
+
 /* FOOTER */
 footer {
   position: relative;
@@ -393,32 +410,3 @@ footer span {
 }
 
 .footer-links a:hover { color: rgba(255,255,255,0.6); }
-
-/* SHOOTING STAR */
-.shooting-star {
-  position: absolute;
-  top: 15%;
-  left: -5%;
-  width: 120px;
-  height: 1.5px;
-  background: linear-gradient(90deg, transparent, #ffffff, transparent);
-  border-radius: 2px;
-  animation: shoot 1s ease-out forwards;
-  transform: rotate(25deg);
-  transform-origin: left center;
-}
-
-@keyframes shoot {
-  0% {
-    left: -5%;
-    top: 15%;
-    opacity: 1;
-    width: 120px;
-  }
-  100% {
-    left: 110%;
-    top: 55%;
-    opacity: 0;
-    width: 60px;
-  }
-}

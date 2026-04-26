@@ -371,6 +371,7 @@ footer span {
 /* TYPEWRITER ANIMATION */
 /* TYPEWRITER ANIMATION */
 /* TYPEWRITER ANIMATION */
+/* TYPEWRITER ANIMATION */
 .typewriter {
   display: inline-block;
   overflow: hidden;
@@ -389,6 +390,10 @@ footer span {
   to { width: 15ch; }
 }
 
+@keyframes blink {
+  0%, 100% { border-color: #8B4513; }
+  50% { border-color: transparent; }
+}
 @keyframes blink {
   0%, 100% { border-color: #8B4513; }
   50% { border-color: transparent; }

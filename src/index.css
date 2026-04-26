@@ -102,14 +102,14 @@ nav {
 }
 
 .hero-subtitle {
-  font-family: 'Lora', serif;
-  font-size: 18px;
+  font-family: 'Special Elite', cursive;
+  font-size: 22px;
   color: #6B4226;
   margin-bottom: 48px;
-  letter-spacing: 0.3px;
-  font-style: italic;
+  margin-top: -8px;
+  letter-spacing: 1px;
   max-width: 500px;
-  line-height: 1.7;
+  line-height: 1.6;
 }
 
 .hero-buttons {

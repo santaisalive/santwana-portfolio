@@ -243,14 +243,17 @@ function App() {
             </button>
           </div>
         </div>
-        <div className="hero-right">
-          <Player
-            autoplay
-            loop
-            src="/astronaut.json"
-            style={{ height: '420px', width: '420px' }}
-          />
-        </div>
+       <div className="hero-right">
+  <div className="astronaut-wrapper">
+    <SpeechBubble />
+    <Player
+      autoplay
+      loop
+      src="/astronaut.json"
+      style={{ height: '420px', width: '420px' }}
+    />
+  </div>
+</div>
       </section>
 
       <section className="pipeline-section" ref={pipelineRef} id="journey">

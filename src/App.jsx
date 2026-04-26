@@ -13,7 +13,7 @@ const INITIAL_CARDS = {
   'Career Snapshot': [
     { id: 'c1', meta: 'Outsized · 2021', title: 'MENA & APAC Market', desc: 'Built the entire MENA and APAC B2B business from zero. 2.5 years. First market, first enterprise deals.', status: 'CLOSED ✓', statusType: 'closed' },
     { id: 'c2', meta: 'Greylabs · 2023', title: 'AI Distribution', desc: 'Went specifically to learn how AI is sold and distributed. Learned the motion. Made a clean exit.', status: 'COMPLETE', statusType: 'learning' },
-    { id: 'c3', meta: 'ZenStatement · 2024', title: 'Founder\'s Office', desc: 'Investor relations, events, marketing, community, content, legal. Operated as a full generalist.', status: 'IN PROGRESS', statusType: 'inprogress' },
+    { id: 'c3', meta: 'ZenStatement · 2024', title: "Founder's Office", desc: 'Investor relations, events, marketing, community, content, legal. Operated as a full generalist.', status: 'IN PROGRESS', statusType: 'inprogress' },
   ],
   'Key Initiatives': [
     { id: 'k1', meta: 'AI · GTM Engineering', title: 'Lead Gen Engine', desc: 'Built a signal-based lead generation engine independently. Python, Apollo, GitHub Actions, Airtable. P0/P1/P2 scoring.', status: 'LIVE', statusType: 'closed' },
@@ -27,6 +27,14 @@ const INITIAL_CARDS = {
 }
 
 const COLUMNS = ['Early Story', 'Career Snapshot', 'Key Initiatives', 'Testimonials']
+
+const FUN_FACTS = [
+  "People call him Santa, hehe I find it silly 😄",
+  "Santwana means to console, well I am working for a guy named consolation, lol 😂",
+  "This guy cycled 18 kms a day for 2 years for maths tuition. Crazier than I thought 🚲",
+  "He loves climbing mountains. He should have asked me, I would have flown him to the top 🚀",
+  "Hey You! He doesn't pay me. Isn't unpaid internship illegal on your earth? 👀",
+]
 
 function Stars() {
   const [stars] = useState(() =>
@@ -124,6 +132,29 @@ function TypeWriter({ onDone }) {
   )
 }
 
+function SpeechBubble() {
+  const [current, setCurrent] = useState(0)
+  const [visible, setVisible] = useState(true)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setVisible(false)
+      setTimeout(() => {
+        setCurrent(prev => (prev + 1) % FUN_FACTS.length)
+        setVisible(true)
+      }, 500)
+    }, 10000)
+    return () => clearInterval(interval)
+  }, [])
+
+  return (
+    <div className={`speech-bubble ${visible ? 'visible' : 'hidden'}`}>
+      {FUN_FACTS[current]}
+      <div className="speech-bubble-tail"></div>
+    </div>
+  )
+}
+
 function KanbanBoard() {
   const [cards, setCards] = useState(INITIAL_CARDS)
   const [dragging, setDragging] = useState(null)
@@ -195,36 +226,6 @@ function KanbanBoard() {
     </div>
   )
 }
-const FUN_FACTS = [
-  "People call him Santa, hehe I find it silly 😄",
-  "Santwana means to console, well I am working for a guy named consolation, lol 😂",
-  "This guy cycled 18 kms a day for 2 years for maths tuition. Crazier than I thought 🚲",
-  "He loves climbing mountains. He should have asked me, I would have flown him to the top 🚀",
-  "Hey You! He doesn't pay me. Isn't unpaid internship illegal on your earth? 👀",
-]
-
-function SpeechBubble() {
-  const [current, setCurrent] = useState(0)
-  const [visible, setVisible] = useState(true)
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setVisible(false)
-      setTimeout(() => {
-        setCurrent(prev => (prev + 1) % FUN_FACTS.length)
-        setVisible(true)
-      }, 500)
-    }, 10000)
-    return () => clearInterval(interval)
-  }, [])
-
-  return (
-    <div className={`speech-bubble ${visible ? 'visible' : 'hidden'}`}>
-      {FUN_FACTS[current]}
-      <div className="speech-bubble-tail"></div>
-    </div>
-  )
-}
 
 function App() {
   const pipelineRef = useRef(null)
@@ -258,11 +259,11 @@ function App() {
             <span>Open to Founder's Office roles · Bengaluru</span>
           </div>
           <div className="hero-greeting">Hi!</div>
-<div className="hero-greeting">I'm Santwana.</div>
-<h1 className="hero-title">
-  I Build<br />
-  <TypeWriter onDone={handleTypewriterDone} />
-</h1>
+          <div className="hero-greeting">I'm Santwana.</div>
+          <h1 className="hero-title">
+            I Build<br />
+            <TypeWriter onDone={handleTypewriterDone} />
+          </h1>
           <p className={`hero-subtitle ${subtitleDone ? 'subtitle-pulse' : ''}`}>
             GTM. AI. Ops. Growth.{' '}
             <span className={`subtitle-highlight ${subtitleDone ? 'underline-in' : ''}`}>
@@ -275,22 +276,21 @@ function App() {
             </button>
           </div>
         </div>
-       <div className="hero-right">
-  <div className="hero-right">
-  <div className="astronaut-wrapper">
-    <SpeechBubble />
-    <Player
-      autoplay
-      loop
-      src="/astronaut.json"
-      style={{ height: '420px', width: '420px' }}
-    />
-    <div className="cosmos-tag">
-      <div className="cosmos-name">Cosmos</div>
-      <div className="cosmos-title">Chief Intern @ Santa's</div>
-    </div>
-  </div>
-</div>
+        <div className="hero-right">
+          <div className="astronaut-wrapper">
+            <SpeechBubble />
+            <Player
+              autoplay
+              loop
+              src="/astronaut.json"
+              style={{ height: '420px', width: '420px' }}
+            />
+            <div className="cosmos-tag">
+              <div className="cosmos-name">Cosmos</div>
+              <div className="cosmos-title">Chief Intern @ Santa's</div>
+            </div>
+          </div>
+        </div>
       </section>
 
       <section className="pipeline-section" ref={pipelineRef} id="journey">

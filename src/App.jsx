@@ -217,7 +217,7 @@ function App() {
           <a href="#journey">My Journey</a>
           <a href="#refs">Wall of Ref</a>
           <a href="#work">Best Work</a>
-          <a href="#santa">Ask Santa</a>
+          <a href="#santa">Ask Cosmos</a>
         </div>
       </nav>
 

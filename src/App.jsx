@@ -1,8 +1,8 @@
-import { useState, useEffect, useRef, useCallback } from 'react'
+import { useState, useEffect, useRef, useCallback } = from 'react'
+import { Player } from '@lottiefiles/react-lottie-player'
 import './App.css'
 
 const TYPEWRITER_TEXT = 'Almost Anything!'
-const SUBTITLE_TEXT = 'GTM. AI. Ops. Growth. Yes, all of it.'
 
 const INITIAL_CARDS = {
   'Early Story': [
@@ -35,24 +35,37 @@ function Stars() {
       x: Math.random() * 100,
       y: Math.random() * 100,
       size: Math.random() * 2 + 0.5,
-      opacity: Math.random() * 0.5 + 0.2,
+      baseOpacity: Math.random() * 0.5 + 0.2,
+      twinkle: Math.random() > 0.75,
+      delay: Math.random() * 8000,
+      duration: Math.random() * 4000 + 3000,
     }))
   )
 
-  const [shootingKey, setShootingKey] = useState(0)
-  const [shootingVisible, setShootingVisible] = useState(false)
+  const [opacities, setOpacities] = useState(() =>
+    stars.reduce((acc, star) => {
+      acc[star.id] = star.baseOpacity
+      return acc
+    }, {})
+  )
 
   useEffect(() => {
-    const launch = () => {
-      setShootingKey(k => k + 1)
-      setShootingVisible(true)
-      setTimeout(() => setShootingVisible(false), 1000)
-    }
-
-    launch()
-    const interval = setInterval(launch, 5000)
-    return () => clearInterval(interval)
-  }, [])
+    const intervals = stars
+      .filter(star => star.twinkle)
+      .map(star => {
+        const timeout = setTimeout(() => {
+          const interval = setInterval(() => {
+            setOpacities(prev => ({
+              ...prev,
+              [star.id]: prev[star.id] === star.baseOpacity ? 1 : star.baseOpacity
+            }))
+          }, star.duration)
+          return interval
+        }, star.delay)
+        return timeout
+      })
+    return () => intervals.forEach(clearTimeout)
+  }, [stars])
 
   return (
     <div className="stars-container">
@@ -65,13 +78,11 @@ function Stars() {
             top: `${star.y}%`,
             width: `${star.size}px`,
             height: `${star.size}px`,
-            opacity: star.opacity,
+            opacity: opacities[star.id],
+            transition: `opacity ${star.duration / 2}ms ease-in-out`,
           }}
         />
       ))}
-      {shootingVisible && (
-        <div key={shootingKey} className="shooting-star" />
-      )}
     </div>
   )
 }
@@ -132,20 +143,15 @@ function KanbanBoard() {
   const handleDrop = (e, toCol) => {
     e.preventDefault()
     if (!dragging) return
-
-    const { cardId, fromCol } = dragging
-
+    const { fromCol } = dragging
     if (fromCol === toCol) {
       setDragging(null)
       setDragOver(null)
       return
     }
-
-    // Card snaps back to original column
     setTimeout(() => {
       setCards(prev => ({ ...prev }))
     }, 600)
-
     setDragging(null)
     setDragOver(null)
   }
@@ -239,6 +245,14 @@ function App() {
               <span className="santa-wave">🎅</span> Ask Santa
             </a>
           </div>
+        </div>
+        <div className="hero-right">
+          <Player
+            autoplay
+            loop
+            src="/astronaut.json"
+            style={{ height: '420px', width: '420px' }}
+          />
         </div>
       </section>
 

@@ -2,7 +2,7 @@ import { useState, useEffect, useRef, useCallback } from 'react'
 import { Player } from '@lottiefiles/react-lottie-player'
 import './App.css'
 
-const TYPEWRITER_TEXT = 'Almost Anything!'
+const TYPEWRITER_TEXT = 'Almost Everything!'
 
 const INITIAL_CARDS = {
   'Early Story': [
@@ -257,10 +257,12 @@ function App() {
             <div className="status-dot"></div>
             <span>Open to Founder's Office roles · Bengaluru</span>
           </div>
-          <h1 className="hero-title">
-            Will Build<br />
-            <TypeWriter onDone={handleTypewriterDone} />
-          </h1>
+          <div className="hero-greeting">Hi!</div>
+<div className="hero-greeting">I'm Santwana.</div>
+<h1 className="hero-title">
+  I Build<br />
+  <TypeWriter onDone={handleTypewriterDone} />
+</h1>
           <p className={`hero-subtitle ${subtitleDone ? 'subtitle-pulse' : ''}`}>
             GTM. AI. Ops. Growth.{' '}
             <span className={`subtitle-highlight ${subtitleDone ? 'underline-in' : ''}`}>

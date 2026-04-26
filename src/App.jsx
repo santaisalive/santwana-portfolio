@@ -283,7 +283,7 @@ function App() {
               autoplay
               loop
               src="/astronaut.json"
-              style={{ height: '420px', width: '420px' }}
+              style={{ height: '320px', width: '320px' }}
             />
             <div className="cosmos-tag">
               <div className="cosmos-name">Cosmos</div>

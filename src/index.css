@@ -1,10 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Special+Elite&family=JetBrains+Mono:wght@300;400;500&family=Inter:wght@300;400;500;600&display=swap');
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 html { scroll-behavior: smooth; }
 
@@ -17,10 +13,8 @@ body {
 
 .stars-container {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
   pointer-events: none;
   z-index: 0;
 }
@@ -90,12 +84,12 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 420px;
+  width: 320px;
 }
 
 .speech-bubble {
   position: absolute;
-  top: 60px;
+  top: 10px;
   left: 50%;
   transform: translateX(-50%);
   background: #ffffff;
@@ -105,8 +99,7 @@ nav {
   font-size: 11px;
   color: #080810;
   line-height: 1.6;
-  max-width: 220px;
-  width: 220px;
+  width: 200px;
   text-align: center;
   z-index: 10;
   box-shadow: 0 4px 20px rgba(0,0,0,0.3);
@@ -130,22 +123,20 @@ nav {
 
 .cosmos-tag {
   text-align: center;
-  margin-top: -70px;
-  width: 420px;
-  position: relative;
-  z-index: 2;
+  width: 320px;
+  margin-top: 8px;
 }
 
 .cosmos-name {
   font-family: 'Special Elite', cursive;
-  font-size: 18px;
+  font-size: 16px;
   color: #ffffff;
   letter-spacing: 1px;
 }
 
 .cosmos-title {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
+  font-size: 10px;
   color: rgba(255,255,255,0.35);
   letter-spacing: 1px;
   margin-top: 4px;
@@ -254,10 +245,7 @@ nav {
   transition: all 0.2s;
 }
 
-.btn-primary:hover {
-  background: #22c55e;
-  color: #080810;
-}
+.btn-primary:hover { background: #22c55e; }
 
 .pipeline-section {
   position: relative;
@@ -321,12 +309,7 @@ nav {
   border-radius: 10px;
 }
 
-.col-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-}
-
+.col-dot { width: 6px; height: 6px; border-radius: 50%; }
 .col-dot.early-story { background: rgba(255,255,255,0.4); }
 .col-dot.career-snapshot { background: #eab308; }
 .col-dot.key-initiatives { background: #4ade80; }
@@ -347,11 +330,7 @@ nav {
   border-color: rgba(255,255,255,0.15);
 }
 
-.pipeline-card.dragging {
-  opacity: 0.4;
-  transform: scale(0.98);
-  cursor: grabbing;
-}
+.pipeline-card.dragging { opacity: 0.4; transform: scale(0.98); cursor: grabbing; }
 
 .pipeline-card.active {
   border-color: rgba(74,222,128,0.2);
@@ -395,26 +374,6 @@ nav {
 .card-status.churned { background: rgba(239,68,68,0.1); color: #ef4444; }
 .card-status.learning { background: rgba(234,179,8,0.1); color: #eab308; }
 .card-status.inprogress { background: rgba(167,139,250,0.1); color: #a78bfa; }
-
-.shooting-star {
-  position: absolute;
-  top: 12%;
-  left: -10%;
-  width: 200px;
-  height: 1.5px;
-  background: linear-gradient(90deg, transparent 0%, transparent 30%, rgba(255,255,255,0.8) 70%, #ffffff 100%);
-  border-radius: 2px;
-  animation: shoot 3.5s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
-  transform: rotate(20deg);
-  transform-origin: right center;
-}
-
-@keyframes shoot {
-  0% { left: -15%; top: 10%; opacity: 0; width: 80px; }
-  10% { opacity: 1; }
-  70% { opacity: 0.8; width: 200px; }
-  100% { left: 115%; top: 60%; opacity: 0; width: 120px; }
-}
 
 footer {
   position: relative;

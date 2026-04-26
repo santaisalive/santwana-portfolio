@@ -276,6 +276,7 @@ function App() {
           </div>
         </div>
        <div className="hero-right">
+  <div className="hero-right">
   <div className="astronaut-wrapper">
     <SpeechBubble />
     <Player
@@ -284,6 +285,10 @@ function App() {
       src="/astronaut.json"
       style={{ height: '420px', width: '420px' }}
     />
+    <div className="cosmos-tag">
+      <div className="cosmos-name">Cosmos</div>
+      <div className="cosmos-title">Chief Intern @ Santa's</div>
+    </div>
   </div>
 </div>
       </section>

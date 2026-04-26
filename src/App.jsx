@@ -138,14 +138,6 @@ function App() {
             </a>
           </div>
         </div>
-        <div className="hero-tags">
-          <span>B2B Sales</span>
-          <span>GTM Engineering</span>
-          <span>AI Automation</span>
-          <span>Founder's Office</span>
-          <span>Investor Relations</span>
-          <span>0 to 1</span>
-        </div>
       </section>
 
       {/* PROOF OF WORK */}

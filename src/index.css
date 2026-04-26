@@ -69,12 +69,24 @@ nav {
   position: relative;
   z-index: 1;
   min-height: 100vh;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
   padding: 120px 80px 80px;
+  gap: 48px;
 }
 
-.hero-left { max-width: 680px; }
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+}
+
+.hero-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 .hero-status {
   display: flex;

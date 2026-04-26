@@ -69,13 +69,19 @@ nav {
 /* HERO */
 .hero {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
   padding: 120px 48px 80px;
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
   position: relative;
+  gap: 48px;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
 }
 
 .hero-label {
@@ -367,3 +373,23 @@ footer span {
 }
 
 .footer-links a:hover { color: #2C1810; }
+
+/* SHIP WHEEL */
+.wheel-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+.ship-wheel {
+  width: 420px;
+  height: 420px;
+  animation: rotate 25s linear infinite;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

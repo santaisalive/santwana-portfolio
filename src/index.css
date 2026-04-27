@@ -498,12 +498,23 @@ nav {
   padding: 0 4px;
 }
 
-.modal-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 24px;
-}
+{card.links && card.links.length > 0 && (
+  <div className="modal-links">
+    {card.links.map(function(link, i) {
+      return (
+        
+          key={i}
+          href={link.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="modal-link-btn"
+        >
+          {link.label} — Check it! ↗
+        </a>
+      )
+    })}
+  </div>
+)}
 
 .modal-link-btn {
   display: inline-flex;

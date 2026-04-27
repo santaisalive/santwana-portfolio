@@ -14,6 +14,8 @@ const INITIAL_CARDS = {
       status: 'CLOSED ✓',
       statusType: 'closed',
       thumbnail: '/card-door-to-door.png',
+      images: [],
+      links: [],
       story: 'When I was in 10th grade, my father met with an accident. Almost overnight, things at home changed and I had to step in to support the family business. I began going door to door, selling phenyl and toilet cleaners to hotels and hospitals. Those early days were not easy. I still remember standing in front of storekeepers and supervisors, waiting for them to even acknowledge me. Many times they spoke harshly, and sometimes conversations would turn almost abusive. One day my father told me the best way to respond was not to argue or react, but to make sure I walked away with a deal. That shifted something in me. I stopped seeing those interactions as insults and started seeing them as challenges. Slowly I started observing people more closely, understanding what they actually cared about, and adjusting the way I spoke. What once felt uncomfortable began to feel interesting.',
       learning: 'Resilience is not just about pushing harder. It is about trying differently when something does not work.'
     },
@@ -25,6 +27,8 @@ const INITIAL_CARDS = {
       status: 'FOUNDATION',
       statusType: 'learning',
       thumbnail: '/card-college-ventures.png',
+      images: [],
+      links: [],
       story: 'When I landed in college, I came with a clear thought in my mind. I wanted to build something of my own. I started with a robotics venture but it was high capital and we had to let it go. I shifted focus and built Nexus, the first alumni-student interaction cell in the college, and set up the first student-driven placement cell. For the first time, the college saw campus placements with the highest package going up to 24 LPA. I then built a peer-to-peer learning platform called SkillEva, got our first institutional pilot with BITS Pilani, and students started paying for courses. But my CTO left to pursue higher studies and I had to shut it down. Alongside all this I was writing content for companies which turned into a steady side income. It helped me manage my expenses and eventually repay my education loan.',
       learning: 'I enjoy building things from scratch. More than anything, I learned how to juggle multiple priorities and keep moving forward even when things do not go as planned.'
     },
@@ -36,6 +40,8 @@ const INITIAL_CARDS = {
       status: 'WON 🏆',
       statusType: 'closed',
       thumbnail: '/card-ambiguity.jpg',
+      images: [],
+      links: [],
       story: 'I had applied for a debate competition called Brainium Face-Off at BMS Institute of Technology. When the topic was revealed I realized I had stepped into completely unfamiliar territory. It was on DApps, decentralized applications built on blockchain. I had 24 hours. I knew I could not compete on technical depth so instead I focused on how I could think better. I built a simple framework — core arguments, supporting arguments, counterpoints, and objection handling. I reached out to friends working on blockchain projects to understand how they thought about it. When the debate happened I focused on clarity. I was not trying to sound the smartest in the room. I was trying to make the most sense. And that worked. The prize money was 10,000 rupees. I used it to repair a second-hand laptop I depended on for everything.',
       learning: 'You do not always need to know everything to win. The ability to think clearly, structure your approach, and learn quickly is enough to put you ahead.'
     },
@@ -47,6 +53,10 @@ const INITIAL_CARDS = {
       status: 'PUBLISHED',
       statusType: 'closed',
       thumbnail: '/card-research.jpg',
+      images: [],
+      links: [
+        { label: 'Published Paper', url: 'https://link.springer.com' }
+      ],
       story: 'In my final year, most people were focused on completing their projects and moving on. My mentor suggested I explore research on green manufacturing practices. Almost everyone advised me against it. But I was curious. I started reading research papers to understand how arguments were built and conclusions drawn. I found a physical directory of local manufacturing firms, visited a few in person, and shaped my understanding into a thesis. My professor connected me with a research scholar from NIT Raipur and the three of us worked together every night after 10pm till 1am. We designed a survey using a five-point Likert scale and submitted our work. It got selected in the Journal of The Institution of Engineers India, Series C. A few weeks later we received confirmation from Springer. Our paper had been accepted and published.',
       learning: 'Structured evidence-based research taught me the difference between having an idea and proving it with data.'
     },
@@ -60,6 +70,8 @@ const INITIAL_CARDS = {
       status: 'CLOSED ✓',
       statusType: 'closed',
       thumbnail: '/card-outsized.jpg',
+      images: [],
+      links: [],
       story: 'My journey at Outsized did not start with a big role. I was manually reviewing profiles, filling in missing data, and writing content. Things changed when I was asked to work directly with the MENA Managing Director. The goal was simple on paper but difficult in reality — build the MENA business from scratch. We started with the MD network and went very specific. We noticed many senior stakeholders were into golf so we built a list of leaders across target companies who played golf. We built a key life events calendar, tracking movements and announcements to reach out when it actually mattered. That is how we started closing deals. We worked with top consulting firms, banks, and financial institutions across MENA, building the business to around 480,000 dollars in revenue.',
       learning: 'Growth is rarely about one big move. It is a series of small thoughtful actions. Understanding people, timing conversations well, and staying consistent can compound into something much bigger.'
     },
@@ -71,6 +83,8 @@ const INITIAL_CARDS = {
       status: 'COMPLETE',
       statusType: 'learning',
       thumbnail: '/card-greylabs.png',
+      images: [],
+      links: [],
       story: 'My 4 months at Greylabs felt like time near a black hole — compressed from the outside, but inside it stretched into what felt like a year. I ran demos, closed a deal with a real estate firm at a premium price point, and began learning how to train LLM models for specific use cases. I built a proof of concept for a wealth management firm that most people had avoided because of its complexity. From there I shifted into lead generation — we built an AI-driven automation system and ran around 400 outbound messages a week targeting 200 BFSI companies. That translated into 40 to 50 MQLs every month. But in the first couple of months I noticed a cultural misalignment. So I made a decision and moved on.',
       learning: 'Knowing when to leave is as important as knowing where to go. A short stint done right teaches more than a long one done wrong.'
     },
@@ -82,6 +96,8 @@ const INITIAL_CARDS = {
       status: 'IN PROGRESS',
       statusType: 'inprogress',
       thumbnail: '/card-zenstatement.png',
+      images: [],
+      links: [],
       story: 'I joined ZenStatement with a clear intent — to work closely with an early-stage team building from scratch. From day one my role was not limited to a function. I built CFO Ledger, a not-for-profit community of finance leaders that became our starting point for relationships. We layered in a strong account-based approach, tracking fundraises, product launches, and leadership changes as entry points. For the US GTM I designed a card game inspired by Dungeons and Dragons tailored to our problem space. Along with a comic-style sheet it became a strong conversation starter. I started a short video series engaging finance leaders with fun and insightful questions. I drove revenue end to end — from building pipeline to closing deals, drafting agreements, and handing over to customer success.',
       learning: 'Relationships compound. Distribution is built slowly. Execution across multiple fronts is what drives real growth.'
     },
@@ -95,6 +111,8 @@ const INITIAL_CARDS = {
       status: 'LIVE',
       statusType: 'closed',
       thumbnail: '#1a1a2e',
+      images: [],
+      links: [],
       story: 'Placeholder — write your lead gen engine story here.',
       learning: 'The best proof of work is something you built without being asked to.'
     },
@@ -106,6 +124,8 @@ const INITIAL_CARDS = {
       status: 'IN PROGRESS',
       statusType: 'inprogress',
       thumbnail: '#16213e',
+      images: [],
+      links: [],
       story: 'Placeholder — write your HomeFlavour story here.',
       learning: 'The most meaningful co-builds are rooted in genuine belief in the founder. Not the idea.'
     },
@@ -117,6 +137,8 @@ const INITIAL_CARDS = {
       status: 'COMPLETE',
       statusType: 'learning',
       thumbnail: '#0f3460',
+      images: [],
+      links: [],
       story: 'Placeholder — write your investor relations story here.',
       learning: 'Investors are not just capital. They are distribution if you activate them right.'
     },
@@ -130,6 +152,8 @@ const INITIAL_CARDS = {
       status: 'VERIFIED',
       statusType: 'closed',
       thumbnail: '#1a1a2e',
+      images: [],
+      links: [],
       story: 'Placeholder — paste the full testimonial text here.',
       learning: ''
     },
@@ -141,6 +165,8 @@ const INITIAL_CARDS = {
       status: 'VERIFIED',
       statusType: 'closed',
       thumbnail: '#16213e',
+      images: [],
+      links: [],
       story: 'Placeholder — paste the full testimonial text here.',
       learning: ''
     },

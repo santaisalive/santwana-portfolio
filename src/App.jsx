@@ -114,8 +114,8 @@ const INITIAL_CARDS = {
       thumbnail: '#1a1a2e',
       images: [],
       links: [
-  { label: 'View on Airtable', url: 'https://airtable.com/appWeUeqGjpAqxbr/shrU9VthTOdInW0GC' }
-],
+        { label: 'View on Airtable', url: 'https://airtable.com/appWeUeqGjpAqxbr/shrU9VthTOdInW0GC' }
+      ],
       story: 'Placeholder — write your lead gen engine story here.',
       learning: 'The best proof of work is something you built without being asked to.'
     },
@@ -127,10 +127,25 @@ const INITIAL_CARDS = {
       status: 'IN PROGRESS',
       statusType: 'inprogress',
       thumbnail: '#16213e',
-      images: [homeflavour.jpg],
-      links: [https://homeflavour.store/],
+      images: [],
+      links: [
+        { label: 'Visit HomeFlavour', url: 'https://homeflavour.store/' }
+      ],
       story: 'Placeholder — write your HomeFlavour story here.',
       learning: 'The most meaningful co-builds are rooted in genuine belief in the founder. Not the idea.'
+    },
+    {
+      id: 'k3',
+      meta: 'Investor Relations',
+      title: 'MIS and Investor GTM',
+      desc: 'Managed investor relations across three funds.',
+      status: 'COMPLETE',
+      statusType: 'learning',
+      thumbnail: '#0f3460',
+      images: [],
+      links: [],
+      story: 'Placeholder — write your investor relations story here.',
+      learning: 'Investors are not just capital. They are distribution if you activate them right.'
     },
   ],
   'Ref Wall': [
@@ -142,7 +157,7 @@ const INITIAL_CARDS = {
       status: 'VERIFIED',
       statusType: 'closed',
       thumbnail: '#1a1a2e',
-      images: [yashraj.jpg],
+      images: [],
       links: [],
       story: 'Santwana was instrumental in building the MENA business. His delivery on projects yielded us results as he was quick in understanding the needs of clients. He goes beyond his scope of work to help level up the business and can be an asset in competitor analysis, strategic planning. He could be a value add to any organisation with the right responsibilities.',
       learning: ''
@@ -155,7 +170,7 @@ const INITIAL_CARDS = {
       status: 'VERIFIED',
       statusType: 'closed',
       thumbnail: '#16213e',
-      images: [meenakshi.jpg],
+      images: [],
       links: [],
       story: 'From the moment I joined Outsized, Santwana was my go-to person for understanding the workplace culture, always ready to guide me with patience and insight. Beyond being a fantastic colleague, he is incredibly efficient, hardworking, and self-motivated. His drive to excel is inspiring, and his ability to navigate challenges with a solutions-focused mindset makes him an asset to any team. What truly sets him apart, though, is his kindness. He goes out of his way to support his colleagues.',
       learning: ''
@@ -168,7 +183,7 @@ const INITIAL_CARDS = {
       status: 'VERIFIED',
       statusType: 'closed',
       thumbnail: '#0f3460',
-      images: [palak.jpg],
+      images: [],
       links: [],
       story: 'I had the pleasure of working with Santwana for a little over three years, and he was truly a great teammate. He always found new and better ways to get things done. What stood out the most was how much he cared about the team. He always went the extra mile to support his colleagues, making sure everyone felt comfortable and had what they needed to get the work done. His positive attitude and teamwork made a big difference in creating a great work environment.',
       learning: ''
@@ -181,7 +196,7 @@ const INITIAL_CARDS = {
       status: 'VERIFIED',
       statusType: 'closed',
       thumbnail: '#1a2e1a',
-      images: [tanya.jpg],
+      images: [],
       links: [],
       story: 'I have had the pleasure of working with Santwana and have been consistently impressed by his work ethic, strategic mindset, and entrepreneurial spirit. He doesnt just focus on completing day-to-day tasks - he has a remarkable ability to see the bigger picture, aligning his efforts with long-term business goals. Santwana possesses strong business acumen and treats every challenge with the ownership mindset of a founder. He approaches his work as if the business were his own, demonstrating a deep commitment to driving growth, optimizing processes, and identifying opportunities beyond the immediate scope of his responsibilities.',
       learning: ''

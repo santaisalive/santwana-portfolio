@@ -387,7 +387,6 @@ nav {
 .card-status.learning { background: rgba(234,179,8,0.1); color: #eab308; }
 .card-status.inprogress { background: rgba(167,139,250,0.1); color: #a78bfa; }
 
-/* MODAL */
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -427,7 +426,6 @@ nav {
   height: 220px;
   display: flex;
   align-items: flex-end;
-  padding: 0;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -449,7 +447,6 @@ nav {
   font-size: 10px;
   color: rgba(255,255,255,0.7);
   letter-spacing: 2px;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.8);
 }
 
 .modal-title {
@@ -498,23 +495,12 @@ nav {
   padding: 0 4px;
 }
 
-{card.links && card.links.length > 0 && (
-  <div className="modal-links">
-    {card.links.map(function(link, i) {
-      return (
-        
-          key={i}
-          href={link.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="modal-link-btn"
-        >
-          {link.label} — Check it! ↗
-        </a>
-      )
-    })}
-  </div>
-)}
+.modal-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 24px;
+}
 
 .modal-link-btn {
   display: inline-flex;

@@ -8,7 +8,7 @@ const INITIAL_CARDS = {
   'Early Story': [
     {
       id: 'e1',
-      meta: 'Bihar & Jharkhand · 2009',
+      meta: 'Bihar & Jharkhand · 2013',
       title: 'The First Sale',
       desc: 'Selling phenyl door to door at 15 to keep the family going.',
       status: 'CLOSED ✓',

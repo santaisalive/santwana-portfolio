@@ -6,23 +6,133 @@ const TYPEWRITER_TEXT = 'Almost Everything!'
 
 const INITIAL_CARDS = {
   'Early Story': [
-    { id: 'e1', meta: 'Bihar · 2009', title: 'Apollo Hospital', desc: 'Closed my first enterprise account at 15. Door to door. No pedigree. Just persistence.', status: 'CLOSED ✓', statusType: 'closed' },
-    { id: 'e2', meta: 'Chhattisgarh · 2013', title: 'BITS Pilani Pilot', desc: 'Built an edtech startup in college. Got a pilot with BITS Pilani. Cofounder left. Shut it down.', status: 'CHURNED', statusType: 'churned' },
-    { id: 'e3', meta: 'Chhattisgarh · 2015', title: 'The College Builder', desc: 'Built clubs, earned pocket money from first year. The instinct to build was always there.', status: 'FOUNDATION', statusType: 'learning' },
+    {
+      id: 'e1',
+      meta: 'Bihar & Jharkhand · 2009',
+      title: 'The First Sale',
+      desc: 'Selling phenyl door to door at 15 to keep the family going.',
+      status: 'CLOSED ✓',
+      statusType: 'closed',
+      thumbnail: '/card-door-to-door.jpg',
+      story: 'When I was in 10th grade, my father met with an accident. Almost overnight, things at home changed and I had to step in to support the family business. I began going door to door, selling phenyl and toilet cleaners to hotels and hospitals. Those early days were not easy. I still remember standing in front of storekeepers and supervisors, waiting for them to even acknowledge me. Many times they spoke harshly, and sometimes conversations would turn almost abusive. One day my father told me the best way to respond was not to argue or react, but to make sure I walked away with a deal. That shifted something in me. I stopped seeing those interactions as insults and started seeing them as challenges. Slowly I started observing people more closely, understanding what they actually cared about, and adjusting the way I spoke. What once felt uncomfortable began to feel interesting.',
+      learning: 'Resilience is not just about pushing harder. It is about trying differently when something does not work.'
+    },
+    {
+      id: 'e2',
+      meta: 'Chhattisgarh · 2013',
+      title: 'BITS Pilani Pilot',
+      desc: 'Built an edtech startup. Got a pilot. Shut it down.',
+      status: 'CHURNED',
+      statusType: 'churned',
+      thumbnail: '#16213e',
+      story: 'Placeholder — write your edtech startup story here.',
+      learning: 'Momentum is everything. The moment it halts, bouncing back becomes nearly impossible.'
+    },
+    {
+      id: 'e3',
+      meta: 'Chhattisgarh · 2015',
+      title: 'The College Builder',
+      desc: 'Built clubs, earned pocket money from first year.',
+      status: 'FOUNDATION',
+      statusType: 'learning',
+      thumbnail: '#0f3460',
+      story: 'Placeholder — write your college builder story here.',
+      learning: 'The builder instinct was always there. College just gave it space to breathe.'
+    },
   ],
   'Career Snapshot': [
-    { id: 'c1', meta: 'Outsized · 2021', title: 'MENA & APAC Market', desc: 'Built the entire MENA and APAC B2B business from zero. 2.5 years. First market, first enterprise deals.', status: 'CLOSED ✓', statusType: 'closed' },
-    { id: 'c2', meta: 'Greylabs · 2023', title: 'AI Distribution', desc: 'Went specifically to learn how AI is sold and distributed. Learned the motion. Made a clean exit.', status: 'COMPLETE', statusType: 'learning' },
-    { id: 'c3', meta: 'ZenStatement · 2024', title: "Founder's Office", desc: 'Investor relations, events, marketing, community, content, legal. Operated as a full generalist.', status: 'IN PROGRESS', statusType: 'inprogress' },
+    {
+      id: 'c1',
+      meta: 'Outsized · 2021',
+      title: 'MENA & APAC Market',
+      desc: 'Built the entire B2B business from zero.',
+      status: 'CLOSED ✓',
+      statusType: 'closed',
+      thumbnail: '#1a1a2e',
+      story: 'Placeholder — write your Outsized story here.',
+      learning: 'Building a market from nothing teaches you patience and precision that nothing else can.'
+    },
+    {
+      id: 'c2',
+      meta: 'Greylabs · 2023',
+      title: 'AI Distribution',
+      desc: 'Went to learn how AI is sold. Made a clean exit.',
+      status: 'COMPLETE',
+      statusType: 'learning',
+      thumbnail: '#16213e',
+      story: 'Placeholder — write your Greylabs story here.',
+      learning: 'Knowing when to leave is as important as knowing where to go.'
+    },
+    {
+      id: 'c3',
+      meta: 'ZenStatement · 2024',
+      title: "Founder's Office",
+      desc: 'Generalist. Investor relations to lead gen engine.',
+      status: 'IN PROGRESS',
+      statusType: 'inprogress',
+      thumbnail: '#0f3460',
+      story: 'Placeholder — write your ZenStatement story here.',
+      learning: 'Operating across functions showed me what I actually want to be. Not a salesperson. A builder.'
+    },
   ],
   'Key Initiatives': [
-    { id: 'k1', meta: 'AI · GTM Engineering', title: 'Lead Gen Engine', desc: 'Built a signal-based lead generation engine independently. Python, Apollo, GitHub Actions, Airtable. P0/P1/P2 scoring.', status: 'LIVE', statusType: 'closed' },
-    { id: 'k2', meta: 'HomeFlavour · 2024', title: 'B2B GTM — HomeFlavour', desc: 'Co-building B2B go-to-market for a premium Indian sweets brand run from a village in Maharashtra.', status: 'IN PROGRESS', statusType: 'inprogress' },
-    { id: 'k3', meta: 'Investor Relations', title: 'MIS & Investor GTM', desc: 'Monthly MIS for investor reviews. Worked with 3one4, Boldcap, Atrium Angels. Ran investor-led GTM.', status: 'COMPLETE', statusType: 'learning' },
+    {
+      id: 'k1',
+      meta: 'AI · GTM Engineering',
+      title: 'Lead Gen Engine',
+      desc: 'Signal-based engine. Python, Apollo, Airtable.',
+      status: 'LIVE',
+      statusType: 'closed',
+      thumbnail: '#1a1a2e',
+      story: 'Placeholder — write your lead gen engine story here.',
+      learning: 'The best proof of work is something you built without being asked to.'
+    },
+    {
+      id: 'k2',
+      meta: 'HomeFlavour · 2024',
+      title: 'B2B GTM — HomeFlavour',
+      desc: 'Co-building GTM for a village sweet brand.',
+      status: 'IN PROGRESS',
+      statusType: 'inprogress',
+      thumbnail: '#16213e',
+      story: 'Placeholder — write your HomeFlavour story here.',
+      learning: 'The most meaningful co-builds are rooted in genuine belief in the founder. Not the idea.'
+    },
+    {
+      id: 'k3',
+      meta: 'Investor Relations',
+      title: 'MIS & Investor GTM',
+      desc: 'Managed investor relations across three funds.',
+      status: 'COMPLETE',
+      statusType: 'learning',
+      thumbnail: '#0f3460',
+      story: 'Placeholder — write your investor relations story here.',
+      learning: 'Investors are not just capital. They are distribution if you activate them right.'
+    },
   ],
   'Testimonials': [
-    { id: 't1', meta: 'Placeholder · Role', title: 'Testimonial One', desc: 'Placeholder testimonial. Replace with a real one from someone who has worked with you.', status: 'VERIFIED', statusType: 'closed' },
-    { id: 't2', meta: 'Placeholder · Role', title: 'Testimonial Two', desc: 'Placeholder testimonial. Replace with a real one from someone who has worked with you.', status: 'VERIFIED', statusType: 'closed' },
+    {
+      id: 't1',
+      meta: 'Placeholder · Role',
+      title: 'Testimonial One',
+      desc: 'Replace with a real testimonial.',
+      status: 'VERIFIED',
+      statusType: 'closed',
+      thumbnail: '#1a1a2e',
+      story: 'Placeholder — paste the full testimonial text here.',
+      learning: ''
+    },
+    {
+      id: 't2',
+      meta: 'Placeholder · Role',
+      title: 'Testimonial Two',
+      desc: 'Replace with a real testimonial.',
+      status: 'VERIFIED',
+      statusType: 'closed',
+      thumbnail: '#16213e',
+      story: 'Placeholder — paste the full testimonial text here.',
+      learning: ''
+    },
   ],
 }
 
@@ -155,10 +265,47 @@ function SpeechBubble() {
   )
 }
 
+function CardModal({ card, onClose }) {
+  useEffect(() => {
+    const handleKey = (e) => { if (e.key === 'Escape') onClose() }
+    document.addEventListener('keydown', handleKey)
+    return () => document.removeEventListener('keydown', handleKey)
+  }, [onClose])
+
+  const thumbnailStyle = card.thumbnail.startsWith('/')
+    ? { backgroundImage: `url(${card.thumbnail})`, backgroundSize: 'cover', backgroundPosition: 'center' }
+    : { background: card.thumbnail }
+
+  return (
+    <div className="modal-overlay" onClick={onClose}>
+      <div className="modal-card" onClick={e => e.stopPropagation()}>
+        <div className="modal-thumbnail" style={thumbnailStyle}>
+          <div className="modal-thumbnail-overlay">
+            <div className="modal-meta">{card.meta}</div>
+            <div className="modal-title">{card.title}</div>
+            <div className={`card-status ${card.statusType}`}>{card.status}</div>
+          </div>
+        </div>
+        <div className="modal-body">
+          <p className="modal-story">{card.story}</p>
+          {card.learning && (
+            <div className="modal-learning">
+              <div className="modal-learning-label">THE RECKONING</div>
+              <div className="modal-learning-text">"{card.learning}"</div>
+            </div>
+          )}
+        </div>
+        <button className="modal-close" onClick={onClose}>✕</button>
+      </div>
+    </div>
+  )
+}
+
 function KanbanBoard() {
-  const [cards, setCards] = useState(INITIAL_CARDS)
+  const [cards] = useState(INITIAL_CARDS)
   const [dragging, setDragging] = useState(null)
   const [dragOver, setDragOver] = useState(null)
+  const [activeCard, setActiveCard] = useState(null)
 
   const handleDragStart = (e, cardId, fromCol) => {
     setDragging({ cardId, fromCol })
@@ -173,16 +320,6 @@ function KanbanBoard() {
 
   const handleDrop = (e, toCol) => {
     e.preventDefault()
-    if (!dragging) return
-    const { fromCol } = dragging
-    if (fromCol === toCol) {
-      setDragging(null)
-      setDragOver(null)
-      return
-    }
-    setTimeout(() => {
-      setCards(prev => ({ ...prev }))
-    }, 600)
     setDragging(null)
     setDragOver(null)
   }
@@ -193,37 +330,50 @@ function KanbanBoard() {
   }
 
   return (
-    <div className="pipeline-board">
-      {COLUMNS.map(col => (
-        <div
-          key={col}
-          className={`pipeline-col ${dragOver === col ? 'drag-over' : ''}`}
-          onDragOver={e => handleDragOver(e, col)}
-          onDrop={e => handleDrop(e, col)}
-          onDragLeave={() => setDragOver(null)}
-        >
-          <div className="col-header">
-            <span className={`col-dot ${col.toLowerCase().replace(' ', '-')}`}></span>
-            {col}
-            <span className="col-count">{cards[col].length}</span>
-          </div>
-          {cards[col].map(card => (
-            <div
-              key={card.id}
-              className={`pipeline-card ${dragging?.cardId === card.id ? 'dragging' : ''} ${col === 'Key Initiatives' ? 'active' : ''}`}
-              draggable
-              onDragStart={e => handleDragStart(e, card.id, col)}
-              onDragEnd={handleDragEnd}
-            >
-              <div className="card-meta">{card.meta}</div>
-              <div className="card-title">{card.title}</div>
-              <div className="card-desc">{card.desc}</div>
-              <div className={`card-status ${card.statusType}`}>{card.status}</div>
+    <>
+      <div className="pipeline-board">
+        {COLUMNS.map(col => (
+          <div
+            key={col}
+            className={`pipeline-col ${dragOver === col ? 'drag-over' : ''}`}
+            onDragOver={e => handleDragOver(e, col)}
+            onDrop={e => handleDrop(e, col)}
+            onDragLeave={() => setDragOver(null)}
+          >
+            <div className="col-header">
+              <span className={`col-dot ${col.toLowerCase().replace(' ', '-')}`}></span>
+              {col}
+              <span className="col-count">{cards[col].length}</span>
             </div>
-          ))}
-        </div>
-      ))}
-    </div>
+            {cards[col].map(card => (
+              <div
+                key={card.id}
+                className={`pipeline-card ${dragging?.cardId === card.id ? 'dragging' : ''} ${col === 'Key Initiatives' ? 'active' : ''}`}
+                draggable
+                onDragStart={e => handleDragStart(e, card.id, col)}
+                onDragEnd={handleDragEnd}
+                onClick={() => setActiveCard(card)}
+              >
+                <div
+                  className="card-thumbnail"
+                  style={card.thumbnail.startsWith('/')
+                    ? { backgroundImage: `url(${card.thumbnail})` }
+                    : { background: card.thumbnail }
+                  }
+                ></div>
+                <div className="card-meta">{card.meta}</div>
+                <div className="card-title">{card.title}</div>
+                <div className="card-desc">{card.desc}</div>
+                <div className={`card-status ${card.statusType}`}>{card.status}</div>
+              </div>
+            ))}
+          </div>
+        ))}
+      </div>
+      {activeCard && (
+        <CardModal card={activeCard} onClose={() => setActiveCard(null)} />
+      )}
+    </>
   )
 }
 

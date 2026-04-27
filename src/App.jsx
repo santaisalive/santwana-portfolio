@@ -460,7 +460,7 @@ function KanbanBoard() {
                     onDragEnd={handleDragEnd}
                     onClick={function() { setActiveCard(card) }}
                   >
-                    <div className="card-thumbnail" style={thumbStyle}></div>
+                    <div className={'card-thumbnail' + (col === 'Ref Wall' ? ' face' : '')} style={thumbStyle}></div>
                     <div className="card-meta">{card.meta}</div>
                     <div className="card-title">{card.title}</div>
                     <div className="card-desc">{card.desc}</div>

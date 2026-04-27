@@ -12,7 +12,7 @@ const INITIAL_CARDS = {
       meta: 'Bihar & Jharkhand · 2013',
       title: 'The First Sale',
       desc: 'Selling phenyl door to door at 15 to keep the family going.',
-      status: 'CLOSED ✓',
+      status: 'CLOSED',
       statusType: 'closed',
       thumbnail: '/card-door-to-door.png',
       images: [],
@@ -38,7 +38,7 @@ const INITIAL_CARDS = {
       meta: 'Bengaluru · 2017',
       title: 'Winning in Ambiguity',
       desc: 'Won a national debate on DApps with 24 hours of preparation.',
-      status: 'WON 🏆',
+      status: 'WON',
       statusType: 'closed',
       thumbnail: '/card-ambiguity.jpg',
       images: [],
@@ -68,12 +68,12 @@ const INITIAL_CARDS = {
       meta: 'Outsized · 2021',
       title: 'Building MENA and APAC',
       desc: 'Built the entire B2B business from zero. 480K dollars in revenue.',
-      status: 'CLOSED ✓',
+      status: 'CLOSED',
       statusType: 'closed',
       thumbnail: '/card-outsized.jpg',
       images: [],
       links: [],
-      story: 'My journey at Outsized did not start with a big role. I was manually reviewing profiles, filling in missing data, and writing content. Things changed when I was asked to work directly with the MENA Managing Director. The goal was simple on paper but difficult in reality — build the MENA business from scratch. We started with the MD network and went very specific. We noticed many senior stakeholders were into golf so we built a list of leaders across target companies who played golf. We built a key life events calendar, tracking movements and announcements to reach out when it actually mattered. That is how we started closing deals. We worked with top consulting firms, banks, and financial institutions across MENA, building the business to around 480,000 dollars in revenue.',
+      story: 'My journey at Outsized did not start with a big role. I was manually reviewing profiles, filling in missing data, and writing content. Things changed when I was asked to work directly with the MENA Managing Director. The goal was simple on paper but difficult in reality. Build the MENA business from scratch. We started with the MD network and went very specific. We noticed many senior stakeholders were into golf so we built a list of leaders across target companies who played golf. We built a key life events calendar, tracking movements and announcements to reach out when it actually mattered. That is how we started closing deals. We worked with top consulting firms, banks, and financial institutions across MENA, building the business to around 480,000 dollars in revenue.',
       learning: 'Growth is rarely about one big move. It is a series of small thoughtful actions. Understanding people, timing conversations well, and staying consistent can compound into something much bigger.'
     },
     {
@@ -86,7 +86,7 @@ const INITIAL_CARDS = {
       thumbnail: '/card-greylabs.png',
       images: [],
       links: [],
-      story: 'My 4 months at Greylabs felt like time near a black hole — compressed from the outside, but inside it stretched into what felt like a year. I ran demos, closed a deal with a real estate firm at a premium price point, and began learning how to train LLM models for specific use cases. I built a proof of concept for a wealth management firm that most people had avoided because of its complexity. From there I shifted into lead generation — we built an AI-driven automation system and ran around 400 outbound messages a week targeting 200 BFSI companies. That translated into 40 to 50 MQLs every month. But in the first couple of months I noticed a cultural misalignment. So I made a decision and moved on.',
+      story: 'My 4 months at Greylabs felt like time near a black hole. Compressed from the outside, but inside it stretched into what felt like a year. I ran demos, closed a deal with a real estate firm at a premium price point, and began learning how to train LLM models for specific use cases. I built a proof of concept for a wealth management firm that most people had avoided because of its complexity. From there I shifted into lead generation. We built an AI-driven automation system and ran around 400 outbound messages a week targeting 200 BFSI companies. That translated into 40 to 50 MQLs every month. But in the first couple of months I noticed a cultural misalignment. So I made a decision and moved on.',
       learning: 'Knowing when to leave is as important as knowing where to go. A short stint done right teaches more than a long one done wrong.'
     },
     {
@@ -99,7 +99,7 @@ const INITIAL_CARDS = {
       thumbnail: '/card-zenstatement.png',
       images: [],
       links: [],
-      story: 'I joined ZenStatement with a clear intent — to work closely with an early-stage team building from scratch. From day one my role was not limited to a function. I built CFO Ledger, a not-for-profit community of finance leaders that became our starting point for relationships. We layered in a strong account-based approach, tracking fundraises, product launches, and leadership changes as entry points. For the US GTM I designed a card game inspired by Dungeons and Dragons tailored to our problem space. Along with a comic-style sheet it became a strong conversation starter. I started a short video series engaging finance leaders with fun and insightful questions. I drove revenue end to end — from building pipeline to closing deals, drafting agreements, and handing over to customer success.',
+      story: 'I joined ZenStatement with a clear intent. To work closely with an early-stage team building from scratch. From day one my role was not limited to a function. I built CFO Ledger, a not-for-profit community of finance leaders that became our starting point for relationships. We layered in a strong account-based approach, tracking fundraises, product launches, and leadership changes as entry points. For the US GTM I designed a card game inspired by Dungeons and Dragons tailored to our problem space. Along with a comic-style sheet it became a strong conversation starter. I started a short video series engaging finance leaders with fun and insightful questions. I drove revenue end to end from building pipeline to closing deals, drafting agreements, and handing over to customer success.',
       learning: 'Relationships compound. Distribution is built slowly. Execution across multiple fronts is what drives real growth.'
     },
   ],
@@ -181,7 +181,7 @@ const FUN_FACTS = [
   "Santwana means to console, well I am working for a guy named consolation, lol 😂",
   "This guy cycled 18 kms a day for 2 years for maths tuition. Crazier than I thought 🚲",
   "He loves climbing mountains. He should have asked me, I would have flown him to the top 🚀",
-  "Hey You! He doesn't pay me. Isn't unpaid internship illegal on your earth? 👀",
+  "Hey You! He doesnt pay me. Isnt unpaid internship illegal on your earth? 👀",
 ]
 
 function Stars() {
@@ -230,12 +230,12 @@ function Stars() {
           key={star.id}
           className="star"
           style={{
-            left: `${star.x}%`,
-            top: `${star.y}%`,
-            width: `${star.size}px`,
-            height: `${star.size}px`,
+            left: star.x + '%',
+            top: star.y + '%',
+            width: star.size + 'px',
+            height: star.size + 'px',
             opacity: opacities[star.id],
-            transition: `opacity ${star.duration / 2}ms ease-in-out`,
+            transition: 'opacity ' + (star.duration / 2) + 'ms ease-in-out',
           }}
         />
       ))}
@@ -268,10 +268,10 @@ function TypeWriter({ onDone }) {
   }, [])
 
   return (
-    <span className={`hero-title-accent ${done ? 'compiled' : ''}`}>
+    <span className={done ? 'hero-title-accent compiled' : 'hero-title-accent'}>
       {displayed}
       <span style={{
-        borderRight: `3px solid ${done ? '#4ade80' : 'rgba(255,255,255,0.8)'}`,
+        borderRight: '3px solid ' + (done ? '#4ade80' : 'rgba(255,255,255,0.8)'),
         marginLeft: '2px',
         opacity: showCursor ? 1 : 0,
         transition: 'opacity 0.1s, border-color 0.3s'
@@ -296,7 +296,7 @@ function SpeechBubble() {
   }, [])
 
   return (
-    <div className={`speech-bubble ${visible ? 'visible' : 'hidden'}`}>
+    <div className={visible ? 'speech-bubble visible' : 'speech-bubble hidden'}>
       {FUN_FACTS[current]}
       <div className="speech-bubble-tail"></div>
     </div>
@@ -305,16 +305,18 @@ function SpeechBubble() {
 
 function CardModal({ card, onClose }) {
   useEffect(() => {
-    const handleKey = (e) => { if (e.key === 'Escape') onClose() }
+    function handleKey(e) {
+      if (e.key === 'Escape') onClose()
+    }
     document.addEventListener('keydown', handleKey)
     document.body.style.overflow = 'hidden'
-    return () => {
+    return function() {
       document.removeEventListener('keydown', handleKey)
       document.body.style.overflow = ''
     }
   }, [onClose])
 
-  const thumbnailStyle = card.thumbnail.startsWith('/')
+  var thumbnailStyle = card.thumbnail.startsWith('/')
     ? { backgroundImage: 'url(' + card.thumbnail + ')', backgroundSize: 'cover', backgroundPosition: 'center' }
     : { background: card.thumbnail }
 
@@ -330,43 +332,29 @@ function CardModal({ card, onClose }) {
         </div>
         <div className="modal-body">
           <p className="modal-story">{card.story}</p>
-
           {card.images && card.images.length > 0 && (
             <div className="modal-images-stack">
               {card.images.map(function(img, i) {
                 return (
                   <div key={i}>
-                    <div
-                      className="modal-image-item"
-                      style={{ backgroundImage: 'url(' + img.src + ')' }}
-                    ></div>
-                    {img.caption && (
-                      <div className="modal-image-caption">{img.caption}</div>
-                    )}
+                    <div className="modal-image-item" style={{ backgroundImage: 'url(' + img.src + ')' }}></div>
+                    {img.caption && <div className="modal-image-caption">{img.caption}</div>}
                   </div>
                 )
               })}
             </div>
           )}
-
           {card.links && card.links.length > 0 && (
             <div className="modal-links">
               {card.links.map(function(link, i) {
                 return (
-                  
-                    key={i}
-                    href={link.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="modal-link-btn"
-                  >
+                  <a key={i} href={link.url} target="_blank" rel="noopener noreferrer" className="modal-link-btn">
                     {link.label} — Check it! ↗
                   </a>
                 )
               })}
             </div>
           )}
-
           {card.learning && (
             <div className="modal-learning">
               <div className="modal-learning-label">THE RECKONING</div>
@@ -374,7 +362,7 @@ function CardModal({ card, onClose }) {
             </div>
           )}
         </div>
-        <button className="modal-close" onClick={onClose}>✕</button>
+        <button className="modal-close" onClick={onClose}>x</button>
       </div>
     </div>,
     document.body
@@ -387,73 +375,77 @@ function KanbanBoard() {
   const [dragOver, setDragOver] = useState(null)
   const [activeCard, setActiveCard] = useState(null)
 
-  const handleDragStart = (e, cardId, fromCol) => {
-    setDragging({ cardId, fromCol })
+  function handleDragStart(e, cardId, fromCol) {
+    setDragging({ cardId: cardId, fromCol: fromCol })
     e.dataTransfer.effectAllowed = 'move'
   }
 
-  const handleDragOver = (e, col) => {
+  function handleDragOver(e, col) {
     e.preventDefault()
     e.dataTransfer.dropEffect = 'move'
     setDragOver(col)
   }
 
-  const handleDrop = (e, toCol) => {
+  function handleDrop(e, toCol) {
     e.preventDefault()
     setDragging(null)
     setDragOver(null)
   }
 
-  const handleDragEnd = () => {
+  function handleDragEnd() {
     setDragging(null)
     setDragOver(null)
   }
 
   return (
-    <>
+    <div>
       <div className="pipeline-board">
-        {COLUMNS.map(col => (
-          <div
-            key={col}
-            className={'pipeline-col ' + (dragOver === col ? 'drag-over' : '')}
-            onDragOver={function(e) { handleDragOver(e, col) }}
-            onDrop={function(e) { handleDrop(e, col) }}
-            onDragLeave={function() { setDragOver(null) }}
-          >
-            <div className="col-header">
-              <span className={'col-dot ' + col.toLowerCase().replace(' ', '-')}></span>
-              {col}
-              <span className="col-count">{cards[col].length}</span>
-            </div>
-            {cards[col].map(card => (
-              <div
-                key={card.id}
-                className={'pipeline-card ' + (dragging && dragging.cardId === card.id ? 'dragging' : '') + ' ' + (col === 'Key Initiatives' ? 'active' : '')}
-                draggable
-                onDragStart={function(e) { handleDragStart(e, card.id, col) }}
-                onDragEnd={handleDragEnd}
-                onClick={function() { setActiveCard(card) }}
-              >
-                <div
-                  className="card-thumbnail"
-                  style={card.thumbnail.startsWith('/')
-                    ? { backgroundImage: 'url(' + card.thumbnail + ')' }
-                    : { background: card.thumbnail }
-                  }
-                ></div>
-                <div className="card-meta">{card.meta}</div>
-                <div className="card-title">{card.title}</div>
-                <div className="card-desc">{card.desc}</div>
-                <div className={'card-status ' + card.statusType}>{card.status}</div>
+        {COLUMNS.map(function(col) {
+          return (
+            <div
+              key={col}
+              className={dragOver === col ? 'pipeline-col drag-over' : 'pipeline-col'}
+              onDragOver={function(e) { handleDragOver(e, col) }}
+              onDrop={function(e) { handleDrop(e, col) }}
+              onDragLeave={function() { setDragOver(null) }}
+            >
+              <div className="col-header">
+                <span className={'col-dot ' + col.toLowerCase().replace(' ', '-')}></span>
+                {col}
+                <span className="col-count">{cards[col].length}</span>
               </div>
-            ))}
-          </div>
-        ))}
+              {cards[col].map(function(card) {
+                var isActive = col === 'Key Initiatives'
+                var isDragging = dragging && dragging.cardId === card.id
+                var cardClass = 'pipeline-card' + (isDragging ? ' dragging' : '') + (isActive ? ' active' : '')
+                var thumbStyle = card.thumbnail.startsWith('/')
+                  ? { backgroundImage: 'url(' + card.thumbnail + ')' }
+                  : { background: card.thumbnail }
+                return (
+                  <div
+                    key={card.id}
+                    className={cardClass}
+                    draggable
+                    onDragStart={function(e) { handleDragStart(e, card.id, col) }}
+                    onDragEnd={handleDragEnd}
+                    onClick={function() { setActiveCard(card) }}
+                  >
+                    <div className="card-thumbnail" style={thumbStyle}></div>
+                    <div className="card-meta">{card.meta}</div>
+                    <div className="card-title">{card.title}</div>
+                    <div className="card-desc">{card.desc}</div>
+                    <div className={'card-status ' + card.statusType}>{card.status}</div>
+                  </div>
+                )
+              })}
+            </div>
+          )
+        })}
       </div>
       {activeCard && (
         <CardModal card={activeCard} onClose={function() { setActiveCard(null) }} />
       )}
-    </>
+    </div>
   )
 }
 
@@ -461,18 +453,17 @@ function App() {
   const pipelineRef = useRef(null)
   const [subtitleDone, setSubtitleDone] = useState(false)
 
-  const handleTypewriterDone = useCallback(() => {
-    setTimeout(() => setSubtitleDone(true), 300)
+  const handleTypewriterDone = useCallback(function() {
+    setTimeout(function() { setSubtitleDone(true) }, 300)
   }, [])
 
-  const scrollToPipeline = () => {
-    pipelineRef.current?.scrollIntoView({ behavior: 'smooth' })
+  function scrollToPipeline() {
+    if (pipelineRef.current) pipelineRef.current.scrollIntoView({ behavior: 'smooth' })
   }
 
   return (
     <div className="site">
       <Stars />
-
       <nav>
         <div className="nav-pill">
           <a href="#journey">My Journey</a>
@@ -481,7 +472,6 @@ function App() {
           <a href="#santa">Ask Cosmos</a>
         </div>
       </nav>
-
       <section className="hero">
         <div className="hero-left">
           <div className="hero-status">
@@ -489,20 +479,20 @@ function App() {
             <span>Open to Founders Office roles · Bengaluru</span>
           </div>
           <div className="hero-greeting">Hi!</div>
-          <div className="hero-greeting">I'm Santwana.</div>
+          <div className="hero-greeting">I am Santwana.</div>
           <h1 className="hero-title">
             I Build<br />
             <TypeWriter onDone={handleTypewriterDone} />
           </h1>
-          <p className={'hero-subtitle ' + (subtitleDone ? 'subtitle-pulse' : '')}>
+          <p className={subtitleDone ? 'hero-subtitle subtitle-pulse' : 'hero-subtitle'}>
             GTM. AI. Ops. Growth.{' '}
-            <span className={'subtitle-highlight ' + (subtitleDone ? 'underline-in' : '')}>
+            <span className={subtitleDone ? 'subtitle-highlight underline-in' : 'subtitle-highlight'}>
               Yes, all of it.
             </span>
           </p>
           <div className="hero-buttons">
             <button onClick={scrollToPipeline} className="btn-primary">
-              Check Pipeline →
+              Check Pipeline
             </button>
           </div>
         </div>
@@ -517,17 +507,15 @@ function App() {
             />
             <div className="cosmos-tag">
               <div className="cosmos-name">Cosmos</div>
-              <div className="cosmos-title">Chief Intern @ Santa's</div>
+              <div className="cosmos-title">Chief Intern @ Santas</div>
             </div>
           </div>
         </div>
       </section>
-
       <section className="pipeline-section" ref={pipelineRef} id="journey">
         <div className="pipeline-label">CAREER PIPELINE · DRAG TO EXPLORE</div>
         <KanbanBoard />
       </section>
-
       <footer>
         <span>Santwana · Bengaluru</span>
         <div className="footer-links">
@@ -535,7 +523,6 @@ function App() {
           <a href="mailto:your@email.com">Email</a>
         </div>
       </footer>
-
     </div>
   )
 }

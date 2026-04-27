@@ -63,7 +63,7 @@ nav {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  padding: 80px 80px 60px 80px;
+  padding: 80px 48px 60px 80px;
   gap: 48px;
 }
 
@@ -76,7 +76,8 @@ nav {
 .hero-right {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
+  padding-right: 40px;
 }
 
 .astronaut-wrapper {

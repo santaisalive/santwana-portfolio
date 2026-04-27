@@ -144,37 +144,62 @@ const INITIAL_CARDS = {
       learning: 'Investors are not just capital. They are distribution if you activate them right.'
     },
   ],
-  'Testimonials': [
+  'Ref Wall': [
     {
       id: 't1',
-      meta: 'Placeholder · Role',
-      title: 'Testimonial One',
-      desc: 'Replace with a real testimonial.',
+      meta: 'Outsized · Feb 2025',
+      title: 'Yashraj Wade',
+      desc: 'Building Partnerships @ Outsized | MoE Fellow',
       status: 'VERIFIED',
       statusType: 'closed',
       thumbnail: '#1a1a2e',
       images: [],
       links: [],
-      story: 'Placeholder — paste the full testimonial text here.',
+      story: 'Santwana was instrumental in building the MENA business. His delivery on projects yielded us results as he was quick in understanding the needs of clients. He goes beyond his scope of work to help level up the business and can be an asset in competitor analysis, strategic planning. He could be a value add to any organisation with the right responsibilities.',
       learning: ''
     },
     {
       id: 't2',
-      meta: 'Placeholder · Role',
-      title: 'Testimonial Two',
-      desc: 'Replace with a real testimonial.',
+      meta: 'Outsized · Feb 2025',
+      title: 'Meenakshi Menon',
+      desc: 'Founders Office | Strategy and Operations | 0-to-1 Project Delivery',
       status: 'VERIFIED',
       statusType: 'closed',
       thumbnail: '#16213e',
       images: [],
       links: [],
-      story: 'Placeholder — paste the full testimonial text here.',
+      story: 'From the moment I joined Outsized, Santwana was my go-to person for understanding the workplace culture, always ready to guide me with patience and insight. Beyond being a fantastic colleague, he is incredibly efficient, hardworking, and self-motivated. His drive to excel is inspiring, and his ability to navigate challenges with a solutions-focused mindset makes him an asset to any team. What truly sets him apart, though, is his kindness. He goes out of his way to support his colleagues.',
+      learning: ''
+    },
+    {
+      id: 't3',
+      meta: 'Outsized · Feb 2025',
+      title: 'Palak Yerpudey',
+      desc: 'Team Lead, Client Solutions MENA at Outsized',
+      status: 'VERIFIED',
+      statusType: 'closed',
+      thumbnail: '#0f3460',
+      images: [],
+      links: [],
+      story: 'I had the pleasure of working with Santwana for a little over three years, and he was truly a great teammate. He always found new and better ways to get things done. What stood out the most was how much he cared about the team. He always went the extra mile to support his colleagues, making sure everyone felt comfortable and had what they needed to get the work done. His positive attitude and teamwork made a big difference in creating a great work environment.',
+      learning: ''
+    },
+    {
+      id: 't4',
+      meta: 'Synaptic · Feb 2025',
+      title: 'Tanya Shankar',
+      desc: 'Product Marketing at Synaptic | Growth',
+      status: 'VERIFIED',
+      statusType: 'closed',
+      thumbnail: '#1a2e1a',
+      images: [],
+      links: [],
+      story: 'I have had the pleasure of working with Santwana and have been consistently impressed by his work ethic, strategic mindset, and entrepreneurial spirit. He doesnt just focus on completing day-to-day tasks - he has a remarkable ability to see the bigger picture, aligning his efforts with long-term business goals. Santwana possesses strong business acumen and treats every challenge with the ownership mindset of a founder. He approaches his work as if the business were his own, demonstrating a deep commitment to driving growth, optimizing processes, and identifying opportunities beyond the immediate scope of his responsibilities.',
       learning: ''
     },
   ],
-}
 
-const COLUMNS = ['Early Story', 'Career Snapshot', 'Key Initiatives', 'Testimonials']
+const COLUMNS = ['Early Story', 'Career Snapshot', 'Key Initiatives', 'Ref Wall']
 
 const FUN_FACTS = [
   "People call him Santa, hehe I find it silly 😄",

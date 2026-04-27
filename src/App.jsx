@@ -96,7 +96,7 @@ const INITIAL_CARDS = {
       desc: 'Community led sales, ABM, D and D card game, US GTM and more.',
       status: 'IN PROGRESS',
       statusType: 'inprogress',
-      thumbnail: '/card-zenstatement.png',
+      thumbnail: '/card-zenstatement.jpeg',
       images: [],
       links: [],
       story: 'I joined ZenStatement with a clear intent. To work closely with an early-stage team building from scratch. From day one my role was not limited to a function. I built CFO Ledger, a not-for-profit community of finance leaders that became our starting point for relationships. We layered in a strong account-based approach, tracking fundraises, product launches, and leadership changes as entry points. For the US GTM I designed a card game inspired by Dungeons and Dragons tailored to our problem space. Along with a comic-style sheet it became a strong conversation starter. I started a short video series engaging finance leaders with fun and insightful questions. I drove revenue end to end from building pipeline to closing deals, drafting agreements, and handing over to customer success.',

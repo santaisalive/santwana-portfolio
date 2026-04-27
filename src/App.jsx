@@ -113,7 +113,9 @@ const INITIAL_CARDS = {
       statusType: 'closed',
       thumbnail: '#1a1a2e',
       images: [],
-      links: [https://airtable.com/apppWeUeqGjpAqxbr/shrU9VthTOdInW0GC],
+      links: [
+  { label: 'View on Airtable', url: 'https://airtable.com/appWeUeqGjpAqxbr/shrU9VthTOdInW0GC' }
+],
       story: 'Placeholder — write your lead gen engine story here.',
       learning: 'The best proof of work is something you built without being asked to.'
     },

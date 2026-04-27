@@ -134,19 +134,6 @@ const INITIAL_CARDS = {
       story: 'Placeholder — write your HomeFlavour story here.',
       learning: 'The most meaningful co-builds are rooted in genuine belief in the founder. Not the idea.'
     },
-    {
-      id: 'k3',
-      meta: 'Investor Relations',
-      title: 'MIS and Investor GTM',
-      desc: 'Managed investor relations across three funds.',
-      status: 'COMPLETE',
-      statusType: 'learning',
-      thumbnail: '#0f3460',
-      images: [],
-      links: [],
-      story: 'Placeholder — write your investor relations story here.',
-      learning: 'Investors are not just capital. They are distribution if you activate them right.'
-    },
   ],
   'Ref Wall': [
     {

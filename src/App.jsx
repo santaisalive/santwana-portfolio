@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
+import { createPortal } from 'react-dom'
 import { Player } from '@lottiefiles/react-lottie-player'
 import './App.css'
 
@@ -16,7 +17,7 @@ const INITIAL_CARDS = {
       thumbnail: '/card-door-to-door.png',
       images: [],
       links: [],
-      story: 'Slowly I started observing people more closely, understanding what they actually cared about, and adjusting the way I spoke. Slowly I started observing people more closely, understanding what they actually cared about, and adjusting the way I spoke. What once felt uncomfortable began to feel interestingWhat once felt uncomfortable began to feel interestingWhen I was in 10th grade, my father met with an accident. Almost overnight, things at home changed and I had to step in to support the family business. I began going door to door, selling phenyl and toilet cleaners to hotels and hospitals. Those early days were not easy. I still remember standing in front of storekeepers and supervisors, waiting for them to even acknowledge me. Many times they spoke harshly, and sometimes conversations would turn almost abusive. One day my father told me the best way to respond was not to argue or react, but to make sure I walked away with a deal. That shifted something in me. I stopped seeing those interactions as insults and started seeing them as challenges. Slowly I started observing people more closely, understanding what they actually cared about, and adjusting the way I spoke. What once felt uncomfortable began to feel interesting.',
+      story: 'When I was in 10th grade, my father met with an accident. Almost overnight, things at home changed and I had to step in to support the family business. I began going door to door, selling phenyl and toilet cleaners to hotels and hospitals. Those early days were not easy. I still remember standing in front of storekeepers and supervisors, waiting for them to even acknowledge me. Many times they spoke harshly, and sometimes conversations would turn almost abusive. One day my father told me the best way to respond was not to argue or react, but to make sure I walked away with a deal. That shifted something in me. I stopped seeing those interactions as insults and started seeing them as challenges. Slowly I started observing people more closely, understanding what they actually cared about, and adjusting the way I spoke. What once felt uncomfortable began to feel interesting.',
       learning: 'Resilience is not just about pushing harder. It is about trying differently when something does not work.'
     },
     {
@@ -42,7 +43,7 @@ const INITIAL_CARDS = {
       thumbnail: '/card-ambiguity.jpg',
       images: [],
       links: [],
-      story: 'I had applied for a debate competition called Brainium Face-Off at BMS Institute of Technology. When the topic was revealed I realized I had stepped into completely unfamiliar territory. It was on DApps, decentralized applications built on blockchain. I had 24 hours. I knew I could not compete on technical depth so instead I focused on how I could think better. I built a simple framework — core arguments, supporting arguments, counterpoints, and objection handling. I reached out to friends working on blockchain projects to understand how they thought about it. When the debate happened I focused on clarity. I was not trying to sound the smartest in the room. I was trying to make the most sense. And that worked. The prize money was 10,000 rupees. I used it to repair a second-hand laptop I depended on for everything.',
+      story: 'I had applied for a debate competition called Brainium Face-Off at BMS Institute of Technology. When the topic was revealed I realized I had stepped into completely unfamiliar territory. It was on DApps, decentralized applications built on blockchain. I had 24 hours. I knew I could not compete on technical depth so instead I focused on how I could think better. I built a simple framework of core arguments, supporting arguments, counterpoints, and objection handling. I reached out to friends working on blockchain projects to understand how they thought about it. When the debate happened I focused on clarity. I was not trying to sound the smartest in the room. I was trying to make the most sense. And that worked. The prize money was 10,000 rupees. I used it to repair a second-hand laptop I depended on for everything.',
       learning: 'You do not always need to know everything to win. The ability to think clearly, structure your approach, and learn quickly is enough to put you ahead.'
     },
     {
@@ -57,7 +58,7 @@ const INITIAL_CARDS = {
       links: [
         { label: 'Published Paper', url: 'https://link.springer.com' }
       ],
-      story: 'In my final year, most people were focused on completing their projects and moving on. My mentor suggested I explore research on green manufacturing practices. Almost everyone advised me against it. But I was curious. I started reading research papers to understand how arguments were built and conclusions drawn. I found a physical directory of local manufacturing firms, visited a few in person, and shaped my understanding into a thesis. My professor connected me with a research scholar from NIT Raipur and the three of us worked together every night after 10pm till 1am. We designed a survey using a five-point Likert scale and submitted our work. It got selected in the Journal of The Institution of Engineers India, Series C. A few weeks later we received confirmation from Springer. Our paper had been accepted and published.',
+      story: 'In my final year, most people were focused on completing their projects and moving on. My mentor suggested I explore research on green manufacturing practices. Almost everyone advised me against it. But I was curious. I started reading research papers to understand how arguments were built and conclusions drawn. I found a physical directory of local manufacturing firms, visited a few in person, and shaped my understanding into a thesis. My professor connected me with a research scholar from NIT Raipur and the three of us worked together every night after 10pm till 1am. We designed a survey using a five-point Likert scale and submitted our work. It got selected in the Journal of The Institution of Engineers India Series C. A few weeks later we received confirmation from Springer. Our paper had been accepted and published.',
       learning: 'Structured evidence-based research taught me the difference between having an idea and proving it with data.'
     },
   ],
@@ -65,8 +66,8 @@ const INITIAL_CARDS = {
     {
       id: 'c1',
       meta: 'Outsized · 2021',
-      title: 'Building MENA & APAC',
-      desc: 'Built the entire B2B business from zero. $480K revenue.',
+      title: 'Building MENA and APAC',
+      desc: 'Built the entire B2B business from zero. 480K dollars in revenue.',
       status: 'CLOSED ✓',
       statusType: 'closed',
       thumbnail: '/card-outsized.jpg',
@@ -91,8 +92,8 @@ const INITIAL_CARDS = {
     {
       id: 'c3',
       meta: 'ZenStatement · 2024',
-      title: "Founder's Office",
-      desc: 'Community led sales, ABM, D&D card game, US GTM and more.',
+      title: 'Founders Office',
+      desc: 'Community led sales, ABM, D and D card game, US GTM and more.',
       status: 'IN PROGRESS',
       statusType: 'inprogress',
       thumbnail: '/card-zenstatement.png',
@@ -119,7 +120,7 @@ const INITIAL_CARDS = {
     {
       id: 'k2',
       meta: 'HomeFlavour · 2024',
-      title: 'B2B GTM — HomeFlavour',
+      title: 'B2B GTM HomeFlavour',
       desc: 'Co-building GTM for a premium Indian sweets brand.',
       status: 'IN PROGRESS',
       statusType: 'inprogress',
@@ -132,7 +133,7 @@ const INITIAL_CARDS = {
     {
       id: 'k3',
       meta: 'Investor Relations',
-      title: 'MIS & Investor GTM',
+      title: 'MIS and Investor GTM',
       desc: 'Managed investor relations across three funds.',
       status: 'COMPLETE',
       statusType: 'learning',
@@ -314,17 +315,17 @@ function CardModal({ card, onClose }) {
   }, [onClose])
 
   const thumbnailStyle = card.thumbnail.startsWith('/')
-    ? { backgroundImage: `url(${card.thumbnail})`, backgroundSize: 'cover', backgroundPosition: 'center' }
+    ? { backgroundImage: 'url(' + card.thumbnail + ')', backgroundSize: 'cover', backgroundPosition: 'center' }
     : { background: card.thumbnail }
 
   return createPortal(
     <div className="modal-overlay" onClick={onClose}>
-      <div className="modal-card" onClick={e => e.stopPropagation()}>
+      <div className="modal-card" onClick={function(e) { e.stopPropagation() }}>
         <div className="modal-thumbnail" style={thumbnailStyle}>
           <div className="modal-thumbnail-overlay">
             <div className="modal-meta">{card.meta}</div>
             <div className="modal-title">{card.title}</div>
-            <div className={`card-status ${card.statusType}`}>{card.status}</div>
+            <div className={'card-status ' + card.statusType}>{card.status}</div>
           </div>
         </div>
         <div className="modal-body">
@@ -332,33 +333,37 @@ function CardModal({ card, onClose }) {
 
           {card.images && card.images.length > 0 && (
             <div className="modal-images-stack">
-              {card.images.map((img, i) => (
-                <div key={i}>
-                  <div
-                    className="modal-image-item"
-                    style={{ backgroundImage: `url(${img.src})` }}
-                  ></div>
-                  {img.caption && (
-                    <div className="modal-image-caption">{img.caption}</div>
-                  )}
-                </div>
-              ))}
+              {card.images.map(function(img, i) {
+                return (
+                  <div key={i}>
+                    <div
+                      className="modal-image-item"
+                      style={{ backgroundImage: 'url(' + img.src + ')' }}
+                    ></div>
+                    {img.caption && (
+                      <div className="modal-image-caption">{img.caption}</div>
+                    )}
+                  </div>
+                )
+              })}
             </div>
           )}
 
           {card.links && card.links.length > 0 && (
             <div className="modal-links">
-              {card.links.map((link, i) => (
-                
-                  key={i}
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="modal-link-btn"
-                >
-                  {link.label} — Check it! ↗
-                </a>
-              ))}
+              {card.links.map(function(link, i) {
+                return (
+                  
+                    key={i}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="modal-link-btn"
+                  >
+                    {link.label} — Check it! ↗
+                  </a>
+                )
+              })}
             </div>
           )}
 
@@ -410,43 +415,43 @@ function KanbanBoard() {
         {COLUMNS.map(col => (
           <div
             key={col}
-            className={`pipeline-col ${dragOver === col ? 'drag-over' : ''}`}
-            onDragOver={e => handleDragOver(e, col)}
-            onDrop={e => handleDrop(e, col)}
-            onDragLeave={() => setDragOver(null)}
+            className={'pipeline-col ' + (dragOver === col ? 'drag-over' : '')}
+            onDragOver={function(e) { handleDragOver(e, col) }}
+            onDrop={function(e) { handleDrop(e, col) }}
+            onDragLeave={function() { setDragOver(null) }}
           >
             <div className="col-header">
-              <span className={`col-dot ${col.toLowerCase().replace(' ', '-')}`}></span>
+              <span className={'col-dot ' + col.toLowerCase().replace(' ', '-')}></span>
               {col}
               <span className="col-count">{cards[col].length}</span>
             </div>
             {cards[col].map(card => (
               <div
                 key={card.id}
-                className={`pipeline-card ${dragging?.cardId === card.id ? 'dragging' : ''} ${col === 'Key Initiatives' ? 'active' : ''}`}
+                className={'pipeline-card ' + (dragging && dragging.cardId === card.id ? 'dragging' : '') + ' ' + (col === 'Key Initiatives' ? 'active' : '')}
                 draggable
-                onDragStart={e => handleDragStart(e, card.id, col)}
+                onDragStart={function(e) { handleDragStart(e, card.id, col) }}
                 onDragEnd={handleDragEnd}
-                onClick={() => setActiveCard(card)}
+                onClick={function() { setActiveCard(card) }}
               >
                 <div
                   className="card-thumbnail"
                   style={card.thumbnail.startsWith('/')
-                    ? { backgroundImage: `url(${card.thumbnail})` }
+                    ? { backgroundImage: 'url(' + card.thumbnail + ')' }
                     : { background: card.thumbnail }
                   }
                 ></div>
                 <div className="card-meta">{card.meta}</div>
                 <div className="card-title">{card.title}</div>
                 <div className="card-desc">{card.desc}</div>
-                <div className={`card-status ${card.statusType}`}>{card.status}</div>
+                <div className={'card-status ' + card.statusType}>{card.status}</div>
               </div>
             ))}
           </div>
         ))}
       </div>
       {activeCard && (
-        <CardModal card={activeCard} onClose={() => setActiveCard(null)} />
+        <CardModal card={activeCard} onClose={function() { setActiveCard(null) }} />
       )}
     </>
   )
@@ -481,7 +486,7 @@ function App() {
         <div className="hero-left">
           <div className="hero-status">
             <div className="status-dot"></div>
-            <span>Open to Founder's Office roles · Bengaluru</span>
+            <span>Open to Founders Office roles · Bengaluru</span>
           </div>
           <div className="hero-greeting">Hi!</div>
           <div className="hero-greeting">I'm Santwana.</div>
@@ -489,9 +494,9 @@ function App() {
             I Build<br />
             <TypeWriter onDone={handleTypewriterDone} />
           </h1>
-          <p className={`hero-subtitle ${subtitleDone ? 'subtitle-pulse' : ''}`}>
+          <p className={'hero-subtitle ' + (subtitleDone ? 'subtitle-pulse' : '')}>
             GTM. AI. Ops. Growth.{' '}
-            <span className={`subtitle-highlight ${subtitleDone ? 'underline-in' : ''}`}>
+            <span className={'subtitle-highlight ' + (subtitleDone ? 'underline-in' : '')}>
               Yes, all of it.
             </span>
           </p>

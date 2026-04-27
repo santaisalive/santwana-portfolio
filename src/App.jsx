@@ -143,7 +143,7 @@ const INITIAL_CARDS = {
       desc: 'Building Partnerships at Outsized | MoE Fellow',
       status: 'VERIFIED',
       statusType: 'closed',
-      thumbnail: '/yashraj.jpg',
+      thumbnail: '#16213e',
       images: [],
       links: [],
       story: 'Santwana was instrumental in building the MENA business. His delivery on projects yielded us results as he was quick in understanding the needs of clients. He goes beyond his scope of work to help level up the business and can be an asset in competitor analysis, strategic planning. He could be a value add to any organisation with the right responsibilities.',

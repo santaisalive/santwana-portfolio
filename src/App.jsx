@@ -131,7 +131,7 @@ const INITIAL_CARDS = {
       links: [
         { label: 'Visit HomeFlavour', url: 'https://homeflavour.store/' }
       ],
-      story: 'Placeholder — write your HomeFlavour story here.',
+      story: 'Home Flavour started with a simple meeting. I met a friends mother, and like most such visits, it began with food. She made ladoos and a variety of South Indian sweets, all from natural and healthier ingredients. But what stood out was not just the taste, it was her intent. She had already started exploring the idea of turning this into a digital business with her daughter. There was clarity in her thought and a strong will to build something of her own. That stayed with me. I felt like I had to contribute in some way. Not as a founder, but as someone who could help her take the next step. I built their e-commerce store, set up payments through PhonePe, and partnered with Shiprocket for last-mile delivery. Today the store has six live SKUs that can be shipped across India. We are also exploring channel partnerships, white-label opportunities, and new distribution avenues. I contribute whenever I can, alongside everything else I am doing. Because this is not just about building a business. It is about backing someone who has the skill, the intent, and the courage to start.',
       learning: 'The most meaningful co-builds are rooted in genuine belief in the founder. Not the idea.'
     },
   ],

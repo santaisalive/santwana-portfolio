@@ -22,12 +22,12 @@ const INITIAL_CARDS = {
     },
     {
       id: 'e2',
-      meta: 'Chhattisgarh · 2018',
+      meta: 'Chhattisgarh · 2014',
       title: 'College Ventures',
       desc: 'Built clubs, a peer learning platform, and repaid my education loan.',
       status: 'FOUNDATION',
       statusType: 'learning',
-      thumbnail: '/card-college-ventures.jpg',
+      thumbnail: '/card-college-ventures.png',
       images: [],
       links: [],
       story: 'When I landed in college, I came with a clear thought in my mind. I wanted to build something of my own. I started with a robotics venture but it was high capital and we had to let it go. I shifted focus and built Nexus, the first alumni-student interaction cell in the college, and set up the first student-driven placement cell. For the first time, the college saw campus placements with the highest package going up to 24 LPA. I then built a peer-to-peer learning platform called SkillEva, got our first institutional pilot with BITS Pilani, and students started paying for courses. But my CTO left to pursue higher studies and I had to shut it down. Alongside all this I was writing content for companies which turned into a steady side income. It helped me manage my expenses and eventually repay my education loan.',
@@ -35,12 +35,12 @@ const INITIAL_CARDS = {
     },
     {
       id: 'e3',
-      meta: 'Bengaluru · 2021',
+      meta: 'Bengaluru · 2017',
       title: 'Winning in Ambiguity',
       desc: 'Won a national debate on DApps with 24 hours of preparation.',
       status: 'WON',
       statusType: 'closed',
-      thumbnail: '/card-ambiguity.png',
+      thumbnail: '/card-ambiguity.jpg',
       images: [],
       links: [],
       story: 'I had applied for a debate competition called Brainium Face-Off at BMS Institute of Technology. When the topic was revealed I realized I had stepped into completely unfamiliar territory. It was on DApps, decentralized applications built on blockchain. I had 24 hours. I knew I could not compete on technical depth so instead I focused on how I could think better. I built a simple framework of core arguments, supporting arguments, counterpoints, and objection handling. I reached out to friends working on blockchain projects to understand how they thought about it. When the debate happened I focused on clarity. I was not trying to sound the smartest in the room. I was trying to make the most sense. And that worked. The prize money was 10,000 rupees. I used it to repair a second-hand laptop I depended on for everything.',
@@ -48,7 +48,7 @@ const INITIAL_CARDS = {
     },
     {
       id: 'e4',
-      meta: 'Chhattisgarh · 2022',
+      meta: 'Chhattisgarh · 2018',
       title: 'Research Paper Published',
       desc: 'Published in Springer via Journal of Institution of Engineers.',
       status: 'PUBLISHED',
@@ -56,7 +56,7 @@ const INITIAL_CARDS = {
       thumbnail: '/card-research.jpg',
       images: [],
       links: [
-        { label: 'Published Paper', url: 'https://link.springer.com/article/10.1007/s40032-022-00902-z' }
+        { label: 'Published Paper', url: 'https://link.springer.com' }
       ],
       story: 'In my final year, most people were focused on completing their projects and moving on. My mentor suggested I explore research on green manufacturing practices. Almost everyone advised me against it. But I was curious. I started reading research papers to understand how arguments were built and conclusions drawn. I found a physical directory of local manufacturing firms, visited a few in person, and shaped my understanding into a thesis. My professor connected me with a research scholar from NIT Raipur and the three of us worked together every night after 10pm till 1am. We designed a survey using a five-point Likert scale and submitted our work. It got selected in the Journal of The Institution of Engineers India Series C. A few weeks later we received confirmation from Springer. Our paper had been accepted and published.',
       learning: 'Structured evidence-based research taught me the difference between having an idea and proving it with data.'
@@ -65,7 +65,7 @@ const INITIAL_CARDS = {
   'Career Snapshot': [
     {
       id: 'c1',
-      meta: 'Outsized · 2022',
+      meta: 'Outsized · 2021',
       title: 'Building MENA and APAC',
       desc: 'Built the entire B2B business from zero. 480K dollars in revenue.',
       status: 'CLOSED',
@@ -78,7 +78,7 @@ const INITIAL_CARDS = {
     },
     {
       id: 'c2',
-      meta: 'Greylabs · 2025',
+      meta: 'Greylabs · 2023',
       title: 'AI Distribution',
       desc: '4 months that felt like a year. Sales, LLMs, and a clean exit.',
       status: 'COMPLETE',
@@ -91,12 +91,12 @@ const INITIAL_CARDS = {
     },
     {
       id: 'c3',
-      meta: 'ZenStatement · 2025',
+      meta: 'ZenStatement · 2024',
       title: 'Founders Office',
       desc: 'Community led sales, ABM, D and D card game, US GTM and more.',
       status: 'IN PROGRESS',
       statusType: 'inprogress',
-      thumbnail: '/card-zenstatement.jpeg',
+      thumbnail: '/card-zenstatement.png',
       images: [],
       links: [],
       story: 'I joined ZenStatement with a clear intent. To work closely with an early-stage team building from scratch. From day one my role was not limited to a function. I built CFO Ledger, a not-for-profit community of finance leaders that became our starting point for relationships. We layered in a strong account-based approach, tracking fundraises, product launches, and leadership changes as entry points. For the US GTM I designed a card game inspired by Dungeons and Dragons tailored to our problem space. Along with a comic-style sheet it became a strong conversation starter. I started a short video series engaging finance leaders with fun and insightful questions. I drove revenue end to end from building pipeline to closing deals, drafting agreements, and handing over to customer success.',
@@ -119,7 +119,7 @@ const INITIAL_CARDS = {
     },
     {
       id: 'k2',
-      meta: 'HomeFlavour · 2025',
+      meta: 'HomeFlavour · 2024',
       title: 'B2B GTM HomeFlavour',
       desc: 'Co-building GTM for a premium Indian sweets brand.',
       status: 'IN PROGRESS',
@@ -149,7 +149,7 @@ const INITIAL_CARDS = {
       id: 't1',
       meta: 'Outsized · Feb 2025',
       title: 'Yashraj Wade',
-      desc: 'Building Partnerships @ Outsized | MoE Fellow',
+      desc: 'Building Partnerships at Outsized | MoE Fellow',
       status: 'VERIFIED',
       statusType: 'closed',
       thumbnail: '#1a1a2e',
@@ -198,6 +198,7 @@ const INITIAL_CARDS = {
       learning: ''
     },
   ],
+}
 
 const COLUMNS = ['Early Story', 'Career Snapshot', 'Key Initiatives', 'Ref Wall']
 

@@ -306,7 +306,11 @@ function CardModal({ card, onClose }) {
   useEffect(() => {
     const handleKey = (e) => { if (e.key === 'Escape') onClose() }
     document.addEventListener('keydown', handleKey)
-    return () => document.removeEventListener('keydown', handleKey)
+    document.body.style.overflow = 'hidden'
+    return () => {
+      document.removeEventListener('keydown', handleKey)
+      document.body.style.overflow = ''
+    }
   }, [onClose])
 
   const thumbnailStyle = card.thumbnail.startsWith('/')
@@ -327,13 +331,17 @@ function CardModal({ card, onClose }) {
           <p className="modal-story">{card.story}</p>
 
           {card.images && card.images.length > 0 && (
-            <div className="modal-images-scroll">
+            <div className="modal-images-stack">
               {card.images.map((img, i) => (
-                <div
-                  key={i}
-                  className="modal-image-item"
-                  style={{ backgroundImage: `url(${img})` }}
-                ></div>
+                <div key={i}>
+                  <div
+                    className="modal-image-item"
+                    style={{ backgroundImage: `url(${img.src})` }}
+                  ></div>
+                  {img.caption && (
+                    <div className="modal-image-caption">{img.caption}</div>
+                  )}
+                </div>
               ))}
             </div>
           )}

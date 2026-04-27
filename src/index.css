@@ -611,3 +611,7 @@ footer span {
 }
 
 .footer-links a:hover { color: rgba(255,255,255,0.6); }
+
+.card-thumbnail.face {
+  background-position: top center;
+}

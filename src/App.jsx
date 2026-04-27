@@ -481,7 +481,6 @@ function App() {
   return (
     <div className="site">
       <Stars />
-      </nav>
       <section className="hero">
         <div className="hero-left">
           <div className="hero-status">

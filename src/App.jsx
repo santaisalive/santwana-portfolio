@@ -313,7 +313,7 @@ function CardModal({ card, onClose }) {
     ? { backgroundImage: `url(${card.thumbnail})`, backgroundSize: 'cover', backgroundPosition: 'center' }
     : { background: card.thumbnail }
 
-  return (
+  return createPortal(
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal-card" onClick={e => e.stopPropagation()}>
         <div className="modal-thumbnail" style={thumbnailStyle}>
@@ -325,6 +325,35 @@ function CardModal({ card, onClose }) {
         </div>
         <div className="modal-body">
           <p className="modal-story">{card.story}</p>
+
+          {card.images && card.images.length > 0 && (
+            <div className="modal-images-scroll">
+              {card.images.map((img, i) => (
+                <div
+                  key={i}
+                  className="modal-image-item"
+                  style={{ backgroundImage: `url(${img})` }}
+                ></div>
+              ))}
+            </div>
+          )}
+
+          {card.links && card.links.length > 0 && (
+            <div className="modal-links">
+              {card.links.map((link, i) => (
+                
+                  key={i}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="modal-link-btn"
+                >
+                  {link.label} — Check it! ↗
+                </a>
+              ))}
+            </div>
+          )}
+
           {card.learning && (
             <div className="modal-learning">
               <div className="modal-learning-label">THE RECKONING</div>
@@ -334,7 +363,8 @@ function CardModal({ card, onClose }) {
         </div>
         <button className="modal-close" onClick={onClose}>✕</button>
       </div>
-    </div>
+    </div>,
+    document.body
   )
 }
 

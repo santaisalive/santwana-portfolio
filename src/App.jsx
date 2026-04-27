@@ -481,13 +481,6 @@ function App() {
   return (
     <div className="site">
       <Stars />
-      <nav>
-        <div className="nav-pill">
-          <a href="#journey">My Journey</a>
-          <a href="#refs">Wall of Ref</a>
-          <a href="#work">Best Work</a>
-          <a href="#santa">Ask Cosmos</a>
-        </div>
       </nav>
       <section className="hero">
         <div className="hero-left">

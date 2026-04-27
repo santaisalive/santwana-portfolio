@@ -17,12 +17,12 @@ const INITIAL_CARDS = {
       thumbnail: '/card-door-to-door.png',
       images: [],
       links: [],
-      story: 'When I was in 10th grade, my father met with an accident. Almost overnight, things at home changed and I had to step in to support the family businessWhen I was in 10th grade, my father met with an accident. Almost overnight, things at home changed and I had to step in to support the family businessWhen I was in 10th grade, my father met with an accident. Almost overnight, things at home changed and I had to step in to support the family business. I began going door to door, selling phenyl and toilet cleaners to hotels and hospitals. Those early days were not easy. I still remember standing in front of storekeepers and supervisors, waiting for them to even acknowledge me. Many times they spoke harshly, and sometimes conversations would turn almost abusive. One day my father told me the best way to respond was not to argue or react, but to make sure I walked away with a deal. That shifted something in me. I stopped seeing those interactions as insults and started seeing them as challenges. Slowly I started observing people more closely, understanding what they actually cared about, and adjusting the way I spoke. What once felt uncomfortable began to feel interesting.',
+      story: 'When I was in 10th grade, my father met with an accident. Almost overnight, things at home changed and I had to step in to support the family business. I began going door to door, selling phenyl and toilet cleaners to hotels and hospitals. Those early days were not easy. I still remember standing in front of storekeepers and supervisors, waiting for them to even acknowledge me. Many times they spoke harshly, and sometimes conversations would turn almost abusive. One day my father told me the best way to respond was not to argue or react, but to make sure I walked away with a deal. That shifted something in me. I stopped seeing those interactions as insults and started seeing them as challenges. Slowly I started observing people more closely, understanding what they actually cared about, and adjusting the way I spoke. What once felt uncomfortable began to feel interesting.',
       learning: 'Resilience is not just about pushing harder. It is about trying differently when something does not work.'
     },
     {
       id: 'e2',
-      meta: 'Chhattisgarh · 2014',
+      meta: 'Chhattisgarh · 2018',
       title: 'College Ventures',
       desc: 'Built clubs, a peer learning platform, and repaid my education loan.',
       status: 'FOUNDATION',
@@ -35,7 +35,7 @@ const INITIAL_CARDS = {
     },
     {
       id: 'e3',
-      meta: 'Bengaluru · 2017',
+      meta: 'Bengaluru · 2021',
       title: 'Winning in Ambiguity',
       desc: 'Won a national debate on DApps with 24 hours of preparation.',
       status: 'WON',
@@ -48,7 +48,7 @@ const INITIAL_CARDS = {
     },
     {
       id: 'e4',
-      meta: 'Chhattisgarh · 2018',
+      meta: 'Chhattisgarh · 2022',
       title: 'Research Paper Published',
       desc: 'Published in Springer via Journal of Institution of Engineers.',
       status: 'PUBLISHED',
@@ -56,7 +56,7 @@ const INITIAL_CARDS = {
       thumbnail: '/card-research.jpg',
       images: [],
       links: [
-        { label: 'Published Paper', url: 'https://link.springer.com' }
+        { label: 'Published Paper', url: 'https://link.springer.com/article/10.1007/s40032-022-00902-z' }
       ],
       story: 'In my final year, most people were focused on completing their projects and moving on. My mentor suggested I explore research on green manufacturing practices. Almost everyone advised me against it. But I was curious. I started reading research papers to understand how arguments were built and conclusions drawn. I found a physical directory of local manufacturing firms, visited a few in person, and shaped my understanding into a thesis. My professor connected me with a research scholar from NIT Raipur and the three of us worked together every night after 10pm till 1am. We designed a survey using a five-point Likert scale and submitted our work. It got selected in the Journal of The Institution of Engineers India Series C. A few weeks later we received confirmation from Springer. Our paper had been accepted and published.',
       learning: 'Structured evidence-based research taught me the difference between having an idea and proving it with data.'
@@ -65,7 +65,7 @@ const INITIAL_CARDS = {
   'Career Snapshot': [
     {
       id: 'c1',
-      meta: 'Outsized · 2021',
+      meta: 'Outsized · 2022',
       title: 'Building MENA and APAC',
       desc: 'Built the entire B2B business from zero. 480K dollars in revenue.',
       status: 'CLOSED',
@@ -78,7 +78,7 @@ const INITIAL_CARDS = {
     },
     {
       id: 'c2',
-      meta: 'Greylabs · 2023',
+      meta: 'Greylabs · 2025',
       title: 'AI Distribution',
       desc: '4 months that felt like a year. Sales, LLMs, and a clean exit.',
       status: 'COMPLETE',
@@ -91,7 +91,7 @@ const INITIAL_CARDS = {
     },
     {
       id: 'c3',
-      meta: 'ZenStatement · 2024',
+      meta: 'ZenStatement · 2025',
       title: 'Founders Office',
       desc: 'Community led sales, ABM, D and D card game, US GTM and more.',
       status: 'IN PROGRESS',
@@ -119,7 +119,7 @@ const INITIAL_CARDS = {
     },
     {
       id: 'k2',
-      meta: 'HomeFlavour · 2024',
+      meta: 'HomeFlavour · 2025',
       title: 'B2B GTM HomeFlavour',
       desc: 'Co-building GTM for a premium Indian sweets brand.',
       status: 'IN PROGRESS',

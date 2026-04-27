@@ -429,25 +429,38 @@ nav {
   background-repeat: no-repeat;
   position: relative;
   flex-shrink: 0;
-  display: flex;
-  align-items: stretch;
 }
 
 .modal-thumbnail-overlay {
-  width: 100%;
-  padding: 20px 24px 24px 24px;
-  background: linear-gradient(transparent 0%, rgba(0,0,0,0.95) 100%);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px 24px;
+  background: linear-gradient(
+    transparent 0%,
+    rgba(0,0,0,0.7) 50%,
+    rgba(0,0,0,0.97) 100%
+  );
   display: flex;
   flex-direction: column;
   gap: 8px;
-  margin-top: auto;
+  z-index: 2;
+}
+
+.modal-title {
+  font-family: 'Special Elite', cursive;
+  font-size: 24px;
+  color: #ffffff;
+  text-shadow: 0 1px 6px rgba(0,0,0,1), 0 2px 12px rgba(0,0,0,1);
 }
 
 .modal-meta {
   font-family: 'JetBrains Mono', monospace;
   font-size: 10px;
-  color: rgba(255,255,255,0.7);
+  color: rgba(255,255,255,0.9);
   letter-spacing: 2px;
+  text-shadow: 0 1px 4px rgba(0,0,0,1);
 }
 
 .modal-title {

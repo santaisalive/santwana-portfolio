@@ -792,21 +792,22 @@ function App() {
           </div>
         </div>
         <div className="hero-right">
-          <div
-          className="astronaut-wrapper"
-          onClick={function() { setShowCosmos(true) }}
-          style={{ cursor: 'pointer' }}
-         >
-  <SpeechBubble />
-  <Player
-    autoplay
-    loop
-    src="/astronaut.json"
-    style={{ height: '320px', width: '320px' }}
-  />
-  <div className="cosmos-tag">
-    <div className="cosmos-name">Cosmos</div>
-    <div className="cosmos-title">Chief Intern @ Santas</div>
+  <div
+    className="astronaut-wrapper"
+    onClick={function() { setShowCosmos(true) }}
+    style={{ cursor: 'pointer' }}
+  >
+    <SpeechBubble />
+    <Player
+      autoplay
+      loop
+      src="/astronaut.json"
+      style={{ height: '320px', width: '320px' }}
+    />
+    <div className="cosmos-tag">
+      <div className="cosmos-name">Cosmos</div>
+      <div className="cosmos-title">Chief Intern @ Santas</div>
+    </div>
   </div>
 </div>
       </section>

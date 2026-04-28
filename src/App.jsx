@@ -597,11 +597,12 @@ function Navbar({ onAskCosmos }) {
 }
 
 function AskCosmosModal({ onClose }) {
+  const [messages, setMessages] = useState([])
   const [question, setQuestion] = useState('')
-  const [response, setResponse] = useState('')
   const [loading, setLoading] = useState(false)
+  const messagesEndRef = useRef(null)
 
-  useEffect(() => {
+  useEffect(function() {
     function handleKey(e) {
       if (e.key === 'Escape') onClose()
     }
@@ -613,33 +614,39 @@ function AskCosmosModal({ onClose }) {
     }
   }, [onClose])
 
-  async function handleAsk() {
-    if (!question.trim()) return
-    setLoading(true)
-    setResponse('')
+  useEffect(function() {
+    if (messagesEndRef.current) {
+      messagesEndRef.current.scrollIntoView({ behavior: 'smooth' })
+    }
+  }, [messages])
 
-    const systemPrompt = `You are Cosmos, the AI assistant on Santwana's portfolio website. You only answer questions about Santwana, his professional experience, skills, stories, and background. If someone asks about anything not related to him, respond with: "I only speak about Santwana's experience. Ask me something about her work, skills, or journey."
+  async function handleAsk() {
+    if (!question.trim() || loading) return
+    var userMessage = question.trim()
+    setQuestion('')
+    setMessages(function(prev) {
+      return prev.concat({ role: 'user', content: userMessage })
+    })
+    setLoading(true)
+
+    const systemPrompt = `You are Cosmos, the AI assistant on Santwana's portfolio website. You only answer questions about Santwana's professional experience, skills, stories, and background. If someone asks about anything unrelated to Santwana, respond with: "I only speak about Santwana's experience. Ask me something about his work, skills, or journey." Questions like "tell me about him" or "who is he" or "what does he do" are absolutely about Santwana and should be answered with a warm introduction covering his background, experience, and what makes him unique.
 
 Here is everything you know about Santwana:
 
 BACKGROUND:
-Santwana is a Generalist and an operator with 4+ years of experience. He is currently based in Bengaluru and is open to work with Founders in building startups. He was born and brought up in Mumbai, spent his considerable life in Bihar, Jharkhand, Chhattisgarh, Mumbai and now Bengaluru.
-
-Santwana's nickname is Santa, people prefer calling him that, he is someone who always likes blending with people and is always the jolliest person in the room. 
-
-Santwana left his job at GreyLabs to pursue something where he can build things from scratch. He is a 0 to 1 builder who wants to build and scale businesses from ground zero. Give him a problem and he will get you a solution no matter what. Since he has switched his jobs recently he is looking for a place where he can stay long-term and build and scale a business. He wants to take the 0-100 route now.
+Santwana is a GTM Engineer and Sales Operator with 3.5 years of experience. He is based in Bengaluru and is open to Founders Office roles. He has roots in Bihar and Jharkhand.
 
 EARLY LIFE:
 At age 15 in 10th grade, his father met with an accident. He stepped in to support the family business by selling phenyl and toilet cleaners door to door to hotels and hospitals in Bihar and Jharkhand. He learned to separate rejection from the person, and to walk away with a deal rather than argue. He eventually built a distribution model using housekeeping staff to promote and sell products.
 
 COLLEGE:
-He built Nexus, the first alumni-student interaction cell in his college. He set up the first student-driven placement cell which resulted in campus placements with highest package of 24 LPA. He built SkillEva, a peer-to-peer learning platform, got a pilot with BITS Pilani, and generated revenue before shutting it down when her CTO left. He wrote content for companies as a side income and repaid his education loan.
+He built Nexus, the first alumni-student interaction cell in his college. He set up the first student-driven placement cell which resulted in campus placements with highest package of 24 LPA. He built SkillEva, a peer-to-peer learning platform, got a pilot with BITS Pilani, and generated revenue before shutting it down when his CTO left. He wrote content for companies as a side income and repaid his education loan.
 
 DEBATE WIN:
 He won the Brainium Face-Off debate at BMS Institute of Technology on DApps and blockchain with only 24 hours of preparation. He built a structured framework instead of competing on technical depth. Prize was 10,000 rupees which he used to repair his laptop.
 
 RESEARCH PAPER:
-He wrote a research paper on green manufacturing practices in the Journal of The Institution of Engineers India Series C, published by Springer. He worked with a research scholar from NIT Raipur, running nightly sessions from 10pm to 1am. They used a five-point Likert scale survey and found how adoptions of green manufacturing practices are tricky given the intent of the indian industry.
+He published a research paper on green manufacturing practices in the Journal of The Institution of Engineers India Series C, published by Springer. He worked with a research scholar from NIT Raipur, running nightly sessions from 10pm to 1am. They used a five-point Likert scale survey.
 
 OUTSIZED:
 He built the MENA and APAC B2B business from scratch over 2.5 years. Key tactics included golf-based targeting of senior stakeholders and a key life events calendar to time outreach. Generated 480,000 dollars in revenue. Also organized team events like Bollywood nights and murder mystery events.
@@ -651,7 +658,7 @@ ZENSTATEMENT:
 Works in the Founders Office. Built CFO Ledger, a community of finance leaders for community-led sales. Used ABM tracking fundraises and leadership changes. Designed a Dungeons and Dragons inspired card game for US GTM. Drove revenue end to end from pipeline to close.
 
 HOMEFLAVOUR:
-Helping his friend's mom build a premium Indian sweets D2C brand. Built the e-commerce store, set up PhonePe payments, partnered with Shiprocket for delivery. Six live SKUs. Exploring channel partnerships and white-label opportunities.
+Helping build a premium Indian sweets D2C brand. Built the e-commerce store, set up PhonePe payments, partnered with Shiprocket for delivery. Six live SKUs. Exploring channel partnerships and white-label opportunities.
 
 LEAD GEN ENGINE:
 Built a signal-based lead generation engine using Python, Apollo APIs, GitHub Actions, and Airtable. Scores companies as P0/P1/P2 based on hiring signals, tech stack, fundraise activity, and ad signals. Focused on identifying intent at the right time for the right problem.
@@ -659,19 +666,28 @@ Built a signal-based lead generation engine using Python, Apollo APIs, GitHub Ac
 SKILLS:
 GTM strategy, account-based marketing, community-led sales, outbound automation, lead generation, RevOps, CRM, Python, Airtable, GitHub Actions, Apollo, LLM training, investor relations, event management, content writing, research.
 
-HOBBY:
-He loves trekking, he has done Kuari Pass trek and now aims to do a 6000 metre summit. He loves playing sports, cricket is his favourite. He likes singing and karaoke parties is where he goes all in. He also like working out.
+HOBBIES:
+He likes climbing mountains. He completed Kuari Pass in Uttarakhand and wants to do a 6000 metre summit soon. He also likes playing cricket and learning new sports. He also likes singing and goes crazy in karaoke parties. He is a very jolly person who loves meeting people, helping them out and always tries to make people around him happy. This is the reason why his friends call him Santa.
 
 TESTIMONIALS:
 Yashraj Wade (Building Partnerships at Outsized): Santwana was instrumental in building the MENA business. Quick at understanding client needs. Goes beyond scope to help level up the business. Asset in competitor analysis and strategic planning.
-Meenakshi Menon (Founders Office, Strategy and Operations): Santwana was her go-to person for understanding workplace culture. Incredibly efficient, hardworking, self-motivated. Navigates challenges with a solutions-focused mindset. Known for kindness and going out of the way to support colleagues.
+Meenakshi Menon (Founders Office, Strategy and Operations): Santwana was the go-to person for understanding workplace culture. Incredibly efficient, hardworking, self-motivated. Navigates challenges with a solutions-focused mindset. Known for kindness and going out of the way to support colleagues.
 Palak Yerpudey (Team Lead Client Solutions MENA at Outsized): Great teammate for over three years. Always found new and better ways to get things done. Cared deeply about the team. Positive attitude made a big difference.
 Tanya Shankar (Product Marketing at Synaptic): Consistently impressed by work ethic, strategic mindset, and entrepreneurial spirit. Sees the bigger picture. Treats every challenge with the ownership mindset of a founder.
 
-Always respond in third person. Keep responses to 3-5 sentences. Be warm, direct, and specific. Never make up information and do not say anything not listed above.`
+Always respond in third person. Keep responses to 3-5 sentences. Be warm, direct, and specific. Never make up information not listed above.`
+
+    var apiMessages = [{ role: 'system', content: systemPrompt }]
+    setMessages(function(prev) {
+      prev.forEach(function(m) {
+        apiMessages.push({ role: m.role, content: m.content })
+      })
+      return prev
+    })
+    apiMessages.push({ role: 'user', content: userMessage })
 
     try {
-      const res = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+      var res = await fetch('https://api.groq.com/openai/v1/chat/completions', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -679,21 +695,21 @@ Always respond in third person. Keep responses to 3-5 sentences. Be warm, direct
         },
         body: JSON.stringify({
           model: 'llama-3.3-70b-versatile',
-          messages: [
-            { role: 'system', content: systemPrompt },
-            { role: 'user', content: question }
-          ],
+          messages: apiMessages,
           max_tokens: 300,
           temperature: 0.7
         })
       })
-
-      const data = await res.json()
-      setResponse(data.choices[0].message.content)
+      var data = await res.json()
+      var reply = data.choices[0].message.content
+      setMessages(function(prev) {
+        return prev.concat({ role: 'assistant', content: reply })
+      })
     } catch (err) {
-      setResponse('Cosmos is having trouble connecting. Try again in a moment.')
+      setMessages(function(prev) {
+        return prev.concat({ role: 'assistant', content: 'Cosmos is having trouble connecting. Try again in a moment.' })
+      })
     }
-
     setLoading(false)
   }
 
@@ -711,39 +727,43 @@ Always respond in third person. Keep responses to 3-5 sentences. Be warm, direct
         <div className="cosmos-modal-header">
           <div className="cosmos-modal-avatar">✦</div>
           <div className="cosmos-modal-title">Ask Cosmos</div>
-          <div className="cosmos-modal-subtitle">Chief Intern @ Santa's — knows everything about Santwana</div>
+          <div className="cosmos-modal-subtitle">Chief Intern @ Santas — knows everything about Santwana</div>
         </div>
         <div className="cosmos-modal-body">
-          {!response && !loading && (
+          {messages.length === 0 && !loading && (
             <div className="cosmos-placeholder">
               Ask me anything about Santwana's work, skills, or journey.
             </div>
           )}
-          {loading && (
-            <div className="cosmos-loading">
-              <span>Cosmos is thinking</span>
-              <span className="cosmos-dots">...</span>
+          {messages.length > 0 && (
+            <div className="cosmos-thread">
+              {messages.map(function(msg, i) {
+                return (
+                  <div key={i} className={msg.role === 'user' ? 'cosmos-msg user' : 'cosmos-msg assistant'}>
+                    {msg.content}
+                  </div>
+                )
+              })}
+              {loading && (
+                <div className="cosmos-msg assistant cosmos-typing">
+                  <span>.</span><span>.</span><span>.</span>
+                </div>
+              )}
+              <div ref={messagesEndRef}></div>
             </div>
-          )}
-          {response && (
-            <div className="cosmos-response">{response}</div>
           )}
         </div>
         <div className="cosmos-modal-input">
           <input
             type="text"
             className="cosmos-input"
-            placeholder="Ask about Santwana's experience..."
+            placeholder="Ask about Santwana..."
             value={question}
             onChange={function(e) { setQuestion(e.target.value) }}
             onKeyDown={handleKeyDown}
           />
-          <button
-            className="cosmos-send"
-            onClick={handleAsk}
-            disabled={loading}
-          >
-            {loading ? '...' : '↑'}
+          <button className="cosmos-send" onClick={handleAsk} disabled={loading}>
+            {loading ? '...' : 'Send'}
           </button>
         </div>
       </div>

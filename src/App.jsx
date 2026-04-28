@@ -465,6 +465,133 @@ function KanbanBoard() {
     </div>
   )
 }
+function DMModal({ onClose }) {
+  const [name, setName] = useState('')
+  const [message, setMessage] = useState('')
+  const [sent, setSent] = useState(false)
+  const [sending, setSending] = useState(false)
+
+  useEffect(() => {
+    function handleKey(e) { if (e.key === 'Escape') onClose() }
+    document.addEventListener('keydown', handleKey)
+    document.body.style.overflow = 'hidden'
+    return function() {
+      document.removeEventListener('keydown', handleKey)
+      document.body.style.overflow = ''
+    }
+  }, [onClose])
+
+  async function handleSend() {
+    if (!name.trim() || !message.trim()) return
+    setSending(true)
+    try {
+      await fetch('https://formsubmit.co/ajax/santwana2597@gmail.com', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          name: name,
+          message: message,
+          _subject: 'New DM from portfolio site'
+        })
+      })
+      setSent(true)
+    } catch (err) {
+      setSent(true)
+    }
+    setSending(false)
+  }
+
+  return createPortal(
+    <div className="modal-overlay" onClick={onClose}>
+      <div className="cosmos-modal" onClick={function(e) { e.stopPropagation() }}>
+        <button className="modal-close" onClick={onClose}>x</button>
+        <div className="cosmos-modal-header">
+          <div className="cosmos-modal-avatar">✉</div>
+          <div className="cosmos-modal-title">Send a DM</div>
+          <div className="cosmos-modal-subtitle">Santwana will receive this on email</div>
+        </div>
+        <div className="cosmos-modal-body">
+          {sent ? (
+            <div className="cosmos-response" style={{ textAlign: 'center' }}>
+              Message sent. Santwana will get back to you soon.
+            </div>
+          ) : (
+            <div className="dm-form">
+              <input
+                type="text"
+                className="cosmos-input"
+                placeholder="Your name"
+                value={name}
+                onChange={function(e) { setName(e.target.value) }}
+                style={{ marginBottom: '12px', width: '100%' }}
+              />
+              <textarea
+                className="cosmos-input"
+                placeholder="Your message..."
+                value={message}
+                onChange={function(e) { setMessage(e.target.value) }}
+                rows={5}
+                style={{ width: '100%', resize: 'none' }}
+              />
+              <button
+                className="cosmos-send"
+                onClick={handleSend}
+                disabled={sending}
+                style={{ width: '100%', height: '44px', marginTop: '12px', borderRadius: '8px', fontSize: '13px', fontFamily: 'JetBrains Mono, monospace', letterSpacing: '1px' }}
+              >
+                {sending ? 'Sending...' : 'Send Message'}
+              </button>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>,
+    document.body
+  )
+}
+
+function Navbar({ onAskCosmos }) {
+  const [showGetInTouch, setShowGetInTouch] = useState(false)
+  const [showDM, setShowDM] = useState(false)
+
+  return (
+    <>
+      <nav>
+        <div className="nav-pill">
+          <a href="#journey" onClick={function(e) { e.preventDefault(); document.getElementById('journey').scrollIntoView({ behavior: 'smooth' }) }}>My Journey</a>
+          <button className="nav-btn" onClick={onAskCosmos}>Ask Cosmos</button>
+          <div className="nav-dropdown-wrapper">
+            <button
+              className="nav-btn"
+              onClick={function() { setShowGetInTouch(function(p) { return !p }) }}
+            >
+              Get in Touch {showGetInTouch ? '▲' : '▼'}
+            </button>
+            {showGetInTouch && (
+              <div className="nav-dropdown">
+                <a href="https://calendly.com/santwanajsingh/30min" target="_blank" className="nav-dropdown-item">
+                  📅 Schedule a Call
+                </a>
+                <a href="mailto:santwana2597@gmail.com" className="nav-dropdown-item">
+                  ✉ Email
+                </a>
+                <button className="nav-dropdown-item" onClick={function() { setShowDM(true); setShowGetInTouch(false) }}>
+                  💬 Send a DM
+                </button>
+                <a href="https://www.linkedin.com/in/santwana-j-singh-8428b5163/" target="_blank" className="nav-dropdown-item">
+                  🔗 LinkedIn
+                </a>
+              </div>
+            )}
+          </div>
+          <a href="/resume.pdf" download className="nav-btn">Download Resume</a>
+        </div>
+      </nav>
+      {showDM && <DMModal onClose={function() { setShowDM(false) }} />}
+    </>
+  )
+}
+
 function AskCosmosModal({ onClose }) {
   const [question, setQuestion] = useState('')
   const [response, setResponse] = useState('')
@@ -628,6 +755,7 @@ function App() {
   return (
     <div className="site">
       <Stars />
+      <Navbar onAskCosmos={function() { setShowCosmos(true) }} />
       <section className="hero">
         <div className="hero-left">
           <div className="hero-status">

@@ -655,6 +655,9 @@ Built a signal-based lead generation engine using Python, Apollo APIs, GitHub Ac
 SKILLS:
 GTM strategy, account-based marketing, community-led sales, outbound automation, lead generation, RevOps, CRM, Python, Airtable, GitHub Actions, Apollo, LLM training, investor relations, event management, content writing, research.
 
+HOBBY:
+He loves trekking, he has done Kuari Pass trek and now aims to do a 6000 metre summit. He loves playing sports, cricket is his favourite. He likes singing and karaoke parties is where he goes all in. He also like working out.
+
 TESTIMONIALS:
 Yashraj Wade (Building Partnerships at Outsized): Santwana was instrumental in building the MENA business. Quick at understanding client needs. Goes beyond scope to help level up the business. Asset in competitor analysis and strategic planning.
 Meenakshi Menon (Founders Office, Strategy and Operations): Santwana was her go-to person for understanding workplace culture. Incredibly efficient, hardworking, self-motivated. Navigates challenges with a solutions-focused mindset. Known for kindness and going out of the way to support colleagues.

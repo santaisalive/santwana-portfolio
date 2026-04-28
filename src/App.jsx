@@ -502,7 +502,7 @@ function DMModal({ onClose }) {
   }
 
   return createPortal(
-    <div className="modal-overlay" onClick={onClose}>
+    <div className="cosmos-overlay" onClick={onClose}>
       <div className="cosmos-modal" onClick={function(e) { e.stopPropagation() }}>
         <button className="modal-close" onClick={onClose}>x</button>
         <div className="cosmos-modal-header">
@@ -694,7 +694,7 @@ Always respond in third person. Keep responses to 3-5 sentences. Be warm, direct
   }
 
   return createPortal(
-    <div className="modal-overlay" onClick={onClose}>
+    <div className="cosmos-overlay" onClick={onClose}>
       <div className="cosmos-modal" onClick={function(e) { e.stopPropagation() }}>
         <button className="modal-close" onClick={onClose}>x</button>
         <div className="cosmos-modal-header">

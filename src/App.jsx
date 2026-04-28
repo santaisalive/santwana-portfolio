@@ -197,7 +197,7 @@ const FUN_FACTS = [
   "Ask me anything about him",
   "People call him Santa, hehe I find it silly 😄",
   "Btw, you can ask me anything about Santwana"
-  "Santwana means - to console, I am working for a guy named consolation, lol 😂",
+  "Santwana means, to console, I am working for a guy named consolation, lol 😂",
   "My job as an intern is to answer any question regarding Santwana"
   "He used to cycle 18 kms a day for maths tuition, a typical dad story🚲",
   "If you ask me questions about Santwana, maybe I will get paid one day"

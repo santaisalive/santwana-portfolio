@@ -804,13 +804,14 @@ function App() {
         <span>Santwana · Bengaluru</span>
         <div className="footer-links">
           <a href="https://github.com/santaisalive" target="_blank">GitHub</a>
-          <a href="mailto:your@email.com">Email</a>
+          <a href="mailto:santwana2597@gmail.com">Email</a>
         </div>
       </footer>
+      {showCosmos && (
+        <AskCosmosModal onClose={function() { setShowCosmos(false) }} />
+      )}
     </div>
   )
 }
-{showCosmos && (
-  <AskCosmosModal onClose={function() { setShowCosmos(false) }} />
-)}
+
 export default App

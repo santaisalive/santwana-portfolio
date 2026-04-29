@@ -134,6 +134,52 @@ const INITIAL_CARDS = {
       story: 'Home Flavour started with a simple meeting. I met a friends mother, and like most such visits, it began with food. She made ladoos and a variety of South Indian sweets, all from natural and healthier ingredients. But what stood out was not just the taste, it was her intent. She had already started exploring the idea of turning this into a digital business with her daughter. There was clarity in her thought and a strong will to build something of her own. That stayed with me. I felt like I had to contribute in some way. Not as a founder, but as someone who could help her take the next step. I built their e-commerce store, set up payments through PhonePe, and partnered with Shiprocket for last-mile delivery. Today the store has six live SKUs that can be shipped across India. We are also exploring channel partnerships, white-label opportunities, and new distribution avenues. One ABM practice that we are following for our B2B effort is writing letters to our prospects as that is a highly untapped channel nowadays. I contribute whenever I can, alongside everything else I am doing. Because this is not just about building a business. It is about backing someone who has the skill, the intent, and the courage to start.',
       learning: 'The most meaningful co-builds are rooted in genuine belief in the founder. Not the idea.'
     },
+    {
+      id: 'k3',
+      meta: 'ZenStatement · 2024',
+      title: 'CFO Ledger',
+      desc: 'Built a community of 100 finance leaders from scratch.',
+      status: 'LIVE',
+      statusType: 'closed',
+      thumbnail: '#0f3460',
+      images: [],
+      links: [
+        { label: 'Watch Content', url: 'https://www.linkedin.com/feed/update/urn:li:activity:7377215724173340672?utm_source=share&utm_medium=member_desktop&rcm=ACoAACccMXIBmD97Y9xz_T21Mn-wpekPyKhgbAE' }
+      ],
+      story: 'CFO Ledger started as a simple idea. What if finance leaders had a space where they could actually talk to each other? Not just for networking, but to share opportunities, discuss real problems, and build their own voice in the ecosystem. We did not start with scale. We started small and intentional. We introduced invite-only breakfast sessions bringing together five to ten finance leaders. The goal was not to pitch anything. It was to listen. We heard their stories, understood their journeys, and involved them in shaping what CFO Ledger could become. It was not just a community we were building for them. It was something we were co-building with them. After each session, we brought them into our LinkedIn group to continue the conversation. Today, we have around 100 finance leaders as part of the community. Alongside this, I started experimenting with content. We created short reel-style videos where we asked finance leaders a few quick but meaningful questions. The format was simple, but it worked.',
+      learning: 'Communities are not built by adding people. They are built by making people feel like they belong and have a reason to come back.'
+    },
+    {
+      id: 'k4',
+      meta: 'ZenStatement · US · 2024',
+      title: 'US ABM Card Games',
+      desc: 'Designed two card games for US roadshows. CFO Quest and Finance Frenzy.',
+      status: 'SHIPPED',
+      statusType: 'closed',
+      thumbnail: '#16213e',
+      images: [],
+      links: [
+        { label: 'Finance Frenzy', url: 'https://canva.link/r71m4krxruqlf7v' },
+        { label: 'The CFO Quest', url: 'https://canva.link/t0ifql34jon6ulf' }
+      ],
+      story: 'When we were preparing for our US roadshows, we faced a simple but important question. What do we take with us that people will actually remember? The brief from my founder was clear. It had to engage finance teams. It had to make them talk to each other. Not just polite conversations, but real discussions, maybe even debates. So I started thinking differently. What actually gets people to engage with each other? Games. We explored multiple ideas and eventually landed on two formats. The first was inspired by Taboo, simple and fast. The second was more layered, inspired by Dungeons and Dragons, designed for finance professionals with roles, scenarios, and decisions that mirrored real-world finance situations. I designed the structure, the flow, the characters, and the experience using Gen AI tools and Canva. We got it printed in the US and shipped it to our event venues. At the event, people did not just walk past our booth. They stopped. Teams began interacting with each other, exactly the way we had imagined. It was no longer just a booth. It became an experience.',
+      learning: 'The most memorable GTM is the one that makes people feel something. Not just see something.'
+    },
+    {
+      id: 'k5',
+      meta: 'Wiom · 2024',
+      title: 'Wiom Distribution Strategy',
+      desc: 'Built an evidence-based WiFi distribution strategy for an untapped market.',
+      status: 'CASE STUDY',
+      statusType: 'learning',
+      thumbnail: '#1a2e1a',
+      images: [],
+      links: [
+        { label: 'View Deck', url: 'https://canva.link/643ffch1jmznx4k' }
+      ],
+      story: 'I was speaking with Guneet, the Head of Growth at Wiom, and he shared a challenge they were thinking about. Wiom was building an affordable WiFi solution, but the real question was distribution. How do you take something like this to the right audience, at scale? That stayed with me. I started exploring it on my own. I went through different distribution models, read business case studies, and tried to understand what had worked in similar contexts. But more importantly, I wanted to understand the ground reality. So I spoke to people within RWAs, especially in lower middle-class segments. I wanted to see how decisions were made, who influenced them, and what would actually drive adoption. Slowly, a plan started taking shape. It was not just about selling a product. It was about identifying the right entry points, building trust within communities, and creating a model that could scale through existing social structures rather than fighting them. I shared this with Guneet, and it resonated.',
+      learning: 'Good distribution is not about reach. It is about understanding how decisions actually happen on the ground and designing your approach around that.'
+    },
   ],
   'Ref Wall': [
     {

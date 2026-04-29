@@ -884,7 +884,7 @@ function App() {
     />
     <div className="cosmos-tag">
       <div className="cosmos-name">Cosmos</div>
-      <div className="cosmos-title">Chief Intern @ Santas</div>
+      <div className="cosmos-title">Chief Intern @ Santwana</div>
     </div>
   </div>
 </div>

@@ -73,7 +73,7 @@ const INITIAL_CARDS = {
       thumbnail: '/card-outsized.jpg',
       images: [],
       links: [],
-      story: 'My journey at Outsized did not start with a big role. I was manually reviewing profiles, filling in missing data, and writing content. Things changed when I was asked to work directly with the MENA Managing Director. The goal was simple on paper but difficult in reality. Build the MENA business from scratch. We started with the MD network and went very specific. We noticed many senior stakeholders were into golf so we built a list of leaders across target companies who played golf. We built a key life events calendar, tracking movements and announcements to reach out when it actually mattered. That is how we started closing deals. We worked with top consulting firms, banks, and financial institutions across MENA, building the business to around 480,000 dollars in revenue.',
+      story: 'My journey at Outsized did not start with a big role. I was manually reviewing profiles, filling in missing data, and writing content. Things changed when I was asked to work directly with the MENA Managing Director. The goal was simple on paper but difficult in reality. Build the MENA business from scratch. We started with the MD network and went very specific. We noticed many senior stakeholders were into golf and the MD was a golf-player so we built a list of leaders across target companies who played golf. So one way is to reach out to them digitally, another way is where our MD is to meet them during a golf-game, so a casual setting allowed more insight into their thoughts. We also built a key life events calendar, tracking movements and announcements to reach out when it actually mattered for our ABM approach. That is how we started closing deals. We worked with top consulting firms, banks, and financial institutions across MENA, building the business to around 480,000 dollars in revenue.',
       learning: 'Growth is rarely about one big move. It is a series of small thoughtful actions. Understanding people, timing conversations well, and staying consistent can compound into something much bigger.'
     },
     {
@@ -703,13 +703,13 @@ He won the Brainium Face-Off debate at BMS Institute of Technology on DApps with
 
 He published a research paper on green manufacturing in the Journal of The Institution of Engineers India Series C via Springer. He worked with a researcher from NIT Raipur with nightly sessions from 10pm to 1am using a five-point Likert scale survey.
 
-At Outsized he built the MENA and APAC B2B business from scratch over 2.5 years. He used a list of golf-playing senior stakeholders as an ABM targeting approach. He built a key life events calendar to time outreach. He generated 480,000 dollars in revenue. He organized team events like Bollywood nights and murder mystery events.
+At Outsized he built the MENA and APAC B2B business from scratch over 2.5 years. He used a list of golf-playing senior stakeholders as an ABM targeting approach because the MD of MENA was a golf player and that allowed them to meet this people and built rapport and sell in-person. He also built a key life events calendar to time outreach for ABM and used to send gifts or at least connect with them on crucial dates. He generated 480,000 dollars in revenue. Internally, he also organized team events like Bollywood nights and murder mystery events to bring the remote and on-site team together.
 
 At Greylabs he spent 4 months. He closed a real estate deal, built an LLM proof of concept for a wealth management firm, ran 400 outbound messages a week targeting 200 BFSI companies, generating 40-50 MQLs per month. He left due to cultural misalignment.
 
-At ZenStatement he works in the Founders Office. He built CFO Ledger, a community of finance leaders. He used ABM tracking fundraises and leadership changes. He designed a Dungeons and Dragons card game for US GTM. He drove revenue from pipeline to close.
+At ZenStatement he works in the Founders Office. He built CFO Ledger, a community of finance leaders. He used ABM tracking fundraises and leadership changes. He designed 2 card games for US GTM that can be checked in the pipeline below. These card games were used at multiple places. He also drove revenue from pipeline to close.
 
-For HomeFlavour he built an e-commerce store, set up PhonePe payments, partnered with Shiprocket. Six live SKUs. Exploring channel partnerships and white-label opportunities.
+For HomeFlavour he built an e-commerce store, set up PhonePe payments, partnered with Shiprocket. Six live SKUs. Currently he is exploring channel partnerships and white-label opportunities. He has started his ABM for these via sending letters and enabling physical outreach as a channel rather than digital.
 
 He built a lead generation engine using Python, Apollo APIs, GitHub Actions, and Airtable scoring companies P0/P1/P2 based on hiring signals, tech stack, fundraise activity, and ad signals.
 

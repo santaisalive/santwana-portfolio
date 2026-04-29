@@ -92,7 +92,7 @@ const INITIAL_CARDS = {
     {
       id: 'c3',
       meta: 'ZenStatement · 2025',
-      title: 'Founders Office',
+      title: 'Founder's Office',
       desc: 'Community led sales, ABM, D and D card game, US GTM and more.',
       status: 'IN PROGRESS',
       statusType: 'inprogress',

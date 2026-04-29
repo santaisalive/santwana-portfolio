@@ -714,6 +714,7 @@ For HomeFlavour he built an e-commerce store, set up PhonePe payments, partnered
 He built a lead generation engine using Python, Apollo APIs, GitHub Actions, and Airtable scoring companies P0/P1/P2 based on hiring signals, tech stack, fundraise activity, and ad signals.
 
 Skills: GTM strategy, ABM, community-led sales, outbound automation, lead generation, RevOps, CRM, Python, Airtable, GitHub Actions, Apollo, LLM training, investor relations, event management, content writing, research.
+Hobbies: climbing mountains, he climbed kuari pass and aims to do a 6000m summit soon, cycling, he used to cycle 18 km one-way for math tutions as he was living in a remote village that time, he loves singing, he loves cooking and he loves playing cricket and learning new sports.
 
 Testimonials:
 Yashraj Wade said Santwana was instrumental in building the MENA business, quick at understanding client needs, goes beyond scope, asset in competitor analysis and strategic planning.

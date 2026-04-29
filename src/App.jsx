@@ -828,7 +828,7 @@ function App() {
 </div>
       </section>
       <section className="pipeline-section" ref={pipelineRef} id="journey">
-        <div className="pipeline-label">CAREER PIPELINE · DRAG TO EXPLORE</div>
+        <div className="pipeline-label">CAREER PIPELINE · CLICK ON CARD TO EXPLORE</div>
         <KanbanBoard />
       </section>
       <footer>

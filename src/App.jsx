@@ -541,8 +541,10 @@ function DMModal({ onClose }) {
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify({
           name: name,
+          email: email,
           message: message,
           _subject: 'New DM from portfolio site'
+          _replyto: email
         })
       })
       setSent(true)
@@ -631,9 +633,12 @@ function Navbar({ onAskCosmos }) {
                 <a href="https://calendly.com/santwanajsingh/30min" target="_blank" className="nav-dropdown-item">
                   📅 Schedule a Call
                 </a>
-                <a href="mailto:santwana2597@gmail.com" className="nav-dropdown-item">
-                  ✉ Email
-                </a>
+                <button className="nav-dropdown-item" onClick={function() {
+                 navigator.clipboard.writeText('santwana2597@gmail.com')
+                 alert('Email copied!')
+                 }}>
+                 ✉ Copy Email
+                 </button>
                 <button className="nav-dropdown-item" onClick={function() { setShowDM(true); setShowGetInTouch(false) }}>
                   💬 Send a DM
                 </button>

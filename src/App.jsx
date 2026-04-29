@@ -544,7 +544,6 @@ function DMModal({ onClose }) {
           email: email,
           message: message,
           _subject: 'New DM from portfolio site'
-          _replyto: email
         })
       })
       setSent(true)

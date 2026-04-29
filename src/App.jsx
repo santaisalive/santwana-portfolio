@@ -517,6 +517,7 @@ function KanbanBoard() {
 }
 function DMModal({ onClose }) {
   const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
   const [sent, setSent] = useState(false)
   const [sending, setSending] = useState(false)
@@ -575,6 +576,14 @@ function DMModal({ onClose }) {
                 onChange={function(e) { setName(e.target.value) }}
                 style={{ marginBottom: '12px', width: '100%' }}
               />
+              <input
+                type="email"
+                className="cosmos-input"
+                placeholder="Your email (so Santwana can reply)"
+                value={email}
+                onChange={function(e) { setEmail(e.target.value) }}
+                style={{ marginBottom: '12px', width: '100%' }}
+               />
               <textarea
                 className="cosmos-input"
                 placeholder="Your message..."

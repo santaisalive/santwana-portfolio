@@ -111,10 +111,10 @@ const INITIAL_CARDS = {
       desc: 'Signal-based engine. Python, Apollo, Airtable.',
       status: 'LIVE',
       statusType: 'closed',
-      thumbnail: '#1a1a2e',
+      thumbnail: '/airtable.png',
       images: [],
       links: [
-        { label: 'View on Airtable', url: 'https://airtable.com/appWeUeqGjpAqxbr/shrU9VthTOdInW0GC' }
+        { label: 'View on Airtable', url: 'https://airtable.com/apppWeUeqGjpAqxbr/shrU9VthTOdInW0GC/tblugFgtY26JD4jrt/viwwhDQgt1GIMzbap' }
       ],
       story: 'In my sales journey, one thing became very clear to me. ABM does not work without intent. You either build something so strong that demand naturally forms at the top of the funnel, or you go the other way. You pick a small set of high-value accounts and go deep. But then comes the real question. What makes an account high value? Most people say firmographics. Some say funding. Others say hiring trends. But none of these truly capture intent. Intent is contextual. Imagine you are selling an AI-based third-party risk management tool. What signal actually matters? Funding? Not really. Hiring? Maybe. A recent data breach? That changes everything. That is the moment when the problem becomes real. Platforms like Apollo, Clay, or Bombora are good at aggregating broad signals. They tell you who is likely in market. They do not tell you why now. And they cannot go deep into signals that are highly specific to your problem space. Even if you identify a data breach, there is still timing to consider. A company does not immediately buy a solution. First comes investigation, then temporary fixes, and only after that does the actual buying journey begin. That cycle alone can take months. So the real problem is not just identifying intent. It is identifying the right signal, at the right time, for the right problem. There is no tool that wakes you up and tells you these 10 companies are entering your exact buying window over the next 60 to 90 days. That is the gap I am trying to solve. What I am building is an early attempt at creating a system that captures nuanced signals, maps them to problem-specific intent, and surfaces high-probability accounts before they become obvious to everyone else.',
       learning: 'The best proof of work is something you built without being asked to.'
@@ -156,7 +156,7 @@ const INITIAL_CARDS = {
       desc: 'Designed two card games for US roadshows. CFO Quest and Finance Frenzy.',
       status: 'SHIPPED',
       statusType: 'closed',
-      thumbnail: '#16213e',
+      thumbnail: '/card-game.png',
       images: [],
       links: [
         { label: 'Finance Frenzy', url: 'https://canva.link/r71m4krxruqlf7v' },
@@ -172,7 +172,7 @@ const INITIAL_CARDS = {
       desc: 'Built an evidence-based WiFi distribution strategy for an untapped market.',
       status: 'CASE STUDY',
       statusType: 'learning',
-      thumbnail: '#1a2e1a',
+      thumbnail: '/wiom.jpg',
       images: [],
       links: [
         { label: 'View Deck', url: 'https://canva.link/643ffch1jmznx4k' }

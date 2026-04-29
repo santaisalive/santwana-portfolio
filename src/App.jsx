@@ -723,7 +723,7 @@ Tanya Shankar said she was consistently impressed by his work ethic, strategic m
         <div className="cosmos-modal-header">
           <div className="cosmos-modal-avatar">✦</div>
           <div className="cosmos-modal-title">Ask Cosmos</div>
-          <div className="cosmos-modal-subtitle">Chief Intern @ Santas — knows everything about Santwana</div>
+          <div className="cosmos-modal-subtitle">Chief Intern @ Santa's — knows everything about Santwana</div>
         </div>
         <div className="cosmos-modal-body">
           {messages.length === 0 && !loading && (
